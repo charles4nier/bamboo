@@ -1,0 +1,133 @@
+@font-face {
+  font-family: ProximaNovaLight;
+  src: url(../fonts/ProximaNova-Light.otf);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url(../fonts/ProximaNova-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: GothamLight;
+  src: url(../fonts/GOTHAM-LIGHT_0.ttf);
+  font-weight: bold;
+}
+
+$white: white;
+$brown: #A17644;
+$grey-light: #7B8084;
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: $grey-light;
+  font-family: ProximaNovaLight;
+}
+
+h1 {
+  font-family: GothamLight;
+}
+
+
+.brown-content {
+  color: $brown;
+  font-family: ProximaNovaBold;
+}
+
+.grey-content {
+  font-family: ProximaNovaBold;
+}
+
+header {
+  position: relative;
+  display: flex;
+  height: 923px;
+  background: url('../assets/big_pic_01.jpg') center center no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 300px;
+  .white-container {
+    display: flex;
+    height: 386px;
+    width: 1075px;
+    background-color: $white;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: -248px;
+      div {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        p {
+          width: 475px;
+          font-size: 1.2em;
+          margin: 0 auto;
+          line-height: 1.2em;
+          &:first-child {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+    img {
+      height: 386px;
+      width: 304px;
+    }
+  }
+}
+
+.the-bamboo-straws {
+  height: auto;
+  width: 100%;
+  .the-bamboo-title-container {
+    display: flex;
+    position: relative;
+    height: 650px;
+    width: 100%;
+    background: url('img/big_pic_02.jpg') center center no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: space-between;
+    h1, p:nth-child(2) {
+      color: $white;
+      margin-left: 203px;
+    }
+    h1 {
+      font-size: 4.5em;
+      line-height: 1.2em;
+      margin-top: 70px;
+    }
+    p:nth-child(2) {
+      font-family: ProximaNovaBold;
+      font-size: 1.4em; 
+      margin-bottom: 70px;
+    }
+    .white-square {
+      display: flex;
+      position: absolute;
+      height: 310px;
+      width: 468px;
+      bottom: -80px;
+      right: 196px;
+      background-color: $white;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+    }
+  }
+}
