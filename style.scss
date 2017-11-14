@@ -1,24 +1,46 @@
+@import 'media-queries';
+
 @font-face {
   font-family: ProximaNovaLight;
-  src: url(../fonts/ProximaNova-Light.otf);
+  src: url(fonts/ProximaNova-Light.otf);
   font-weight: lighter;
 }
 
 @font-face {
   font-family: ProximaNovaBold;
-  src: url(../fonts/ProximaNova-Bold.otf);
+  src: url(fonts/ProximaNova-Bold.otf);
   font-weight: bold;
 }
 
 @font-face {
   font-family: GothamLight;
-  src: url(../fonts/GOTHAM-LIGHT_0.ttf);
+  src: url(fonts/GOTHAM-LIGHT_0.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: GeorgiaBold;
+  src: url(fonts/georgiab.ttf);
   font-weight: bold;
 }
 
 $white: white;
 $brown: #A17644;
 $grey-light: #7B8084;
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+}
 
 @mixin background-img($parameters) {
   background: $parameters center center no-repeat;
@@ -33,7 +55,7 @@ $grey-light: #7B8084;
 html, body {
   width: 100%;
   height: 100%;
-  font-size: 20px;
+  font-size: 17px;
   color: $grey-light;
   font-family: ProximaNovaLight;
 }
@@ -41,10 +63,15 @@ html, body {
 h1 {
   font-family: GothamLight;
   color: $white;
-  font-size: 4.5em;
+  font-size: 3.5em;
   line-height: 1em;
-  margin-top: 70px;
-  margin-left: 14%;
+  margin-top: 52px;
+  margin-left: 10%;
+  @include media(">phone", "<=tablet") {
+    font-size: 2.2em;
+    letter-spacing: 3px;
+    margin-top: 10px;
+  }
 }
 
 .card-container {
@@ -62,23 +89,58 @@ h1 {
   font-family: ProximaNovaBold;
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    $white;
+  letter-spacing: 3px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    $white;
+  opacity:  1;
+  letter-spacing: 3px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    $white;
+  opacity:  1;
+  letter-spacing: 3px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    $white;
+  letter-spacing: 3px;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:    $white;
+  letter-spacing: 3px;
+}
+
 header {
   position: relative;
   display: flex;
-  height: 923px;
-  @include background-img(url('../assets/big_pic_01.jpg'));
+  height: 100vh;
+  @include background-img(url('img/big_pic_01.jpg'));
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 300px;
+  h1 {
+    margin: 0 auto 350px auto;
+    img {
+      width: 198px;
+    }
+    @include media(">phone", "<=tablet") {
+      margin-top: 35px;
+      img {
+        width: 130px;
+      }
+    }
+  }
   .white-container {
     display: flex;
-    height: 386px;
-    width: 1075px;
+    height: 285px;
+    width: 800px;
     background-color: $white;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: -248px;
+    margin-bottom: -178px;
       div {
         display: flex;
         height: 100%;
@@ -88,19 +150,48 @@ header {
         justify-content: center;
         p {
           width: 475px;
-          font-size: 1.2em;
           margin: 0 auto;
           line-height: 1.2em;
+          font-size: 1.2em;
           &:first-child {
             margin-bottom: 15px;
           }
+          @include media(">phone", "<=480px") {
+            font-size: 0.6em;
+            width: 55%;
+          }
+          @include media(">480px", "<=tablet") {
+            width: 60%;
+            font-size: 0.7em;
+          }
+        }
+        @include media(">phone", "<=tablet") {
+          height: auto;
         }
       }
 
     img {
-      height: 386px;
-      width: 304px;
+      height: 286px;
+      width: 225px;
+      @include media(">phone", "<=480px") {
+        width: 45%;
+        height: auto;
+      }
+      @include media(">480px", "<=tablet") {
+        width: 40%;
+        height: auto;
+      }
     }
+    @include media(">phone", "<=tablet") {
+      height: auto;
+      width: 100%;
+    }
+  }
+  @include media(">phone", "<=tablet") {
+    @include background-img(url('img/smartphone/m_big_pic_01.jpg'));
+    justify-content: space-between;
+    align-items: center;
+      margin-bottom: 190px;
   }
 }
 
@@ -120,21 +211,33 @@ header {
     }
     p:nth-child(2) {
       font-family: ProximaNovaBold;
-      font-size: 1.4em;
+      font-size: 1.2em;
       margin-bottom: 70px;
       color: $white !important;
+      @include media(">phone", "<=tablet") {
+        font-size: 0.8em;
+      }
     }
     .white-square {
       display: flex;
       position: absolute;
-      height: 310px;
-      width: 468px;
+      height: 230px;
+      width: 346px;
       bottom: -80px;
-      right: 13%;
+      right: 26%;
       background-color: $white;
       align-items: center;
       justify-content: center;
       font-size: 2em;
+      @include media(">phone", "<=tablet") {
+        height: 115px;
+        width: 177px;
+        font-size: 1.2em;
+        right: 3%;
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      height: 350px;
     }
   }
   .card-container {
@@ -142,10 +245,13 @@ header {
     margin-bottom: -10%;
     .card {
       display: flex;
-      height: 529px;
-      width: 325px;
+      height: 423px;
+      width: 260px;
       align-items: flex-end;
       margin: 0 5px;
+      @include media(">phone", "<=tablet") {
+        margin: 0 2px;
+      }
       &:first-child {
         @include background-img(url('img/small_pic_02.jpg'));
       }
@@ -162,7 +268,24 @@ header {
         color: $white;
         font-family: ProximaNovaLight;
         border-top: 1px solid $white;
+        @include media(">phone", "<=480px") {
+          font-size: 0.7em;
+        }
+        @include media(">480px", "<=tablet") {
+          font-size: 0.9em;
+        }
       }
+      @include media(">phone", "<=480px") {
+        height: 187px;
+        width: 98px;
+      }
+      @include media(">480px", "<=tablet") {
+        height: 257px;
+        width: 158px;
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      margin-bottom: 0;
     }
   }
 }
@@ -172,6 +295,11 @@ header {
   width: 100%;
   @include background-img(url('img/big_pic_03.jpg'));
   margin-bottom: 52px;
+  @include media(">phone", "<=tablet") {
+    height: 356px;
+    margin: 42px 0;
+    @include background-img(url('img/smartphone/m_big_pic_03.jpg'));
+  }
 }
 
 .the-change {
@@ -179,42 +307,64 @@ header {
     position: relative;
     height: 594Px;
     @include background-img(url('img/big_pic_04.jpg'));
-    padding-top: 70px;
+    padding-top: 10px;
     h1 {
       margin-top: 0;
     }
     p {
       position: absolute;
-      height: 300px;
-      width: 888px;
-      bottom: -200px;
-      left: calc(50% - 444px);
+      height: 266px;
+      width: 710px;
+      bottom: -150px;
+      left: calc(50% - 360px);
       background-color: $white;
       box-sizing: border-box;
-      padding: 120px;
+      padding: 60px 100px;
+      font-size: 1.1em;
+      @include media(">phone", "<=tablet") {
+        font-size: 0.8em;
+        width: 90%;
+        height: 80px;
+        bottom: -80px;
+        left: 5%;
+        padding: 15px 20px;
+        .break-none {
+          content: ' ';
+        }
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      height: 394Px;
+      @include background-img(url('img/smartphone/m_big_pic_04.jpg'))
     }
   }
   .card-container {
-    height: 484px;
+    display: flex;
+    height: auto;
     background-color: #f0f0f0;
-    margin-top: 200px;
+    margin-top: 160px;
     .card {
-      width: 307px;
+      width: 270px;
       margin: 0 5px;
       h2 {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        height: 307px;
+        height: 270px;
         @include background-img(url('img/small_pic_05.jpg'));
         padding-bottom: 15px;
         box-sizing: border-box;
         font-family: GothamBold;
+        @include media(">phone", "<=tablet") {
+          width: 150px;
+          height: 150px;
+        }
         color: $white;
       }
       &:nth-child(2) {
         h2 {
           @include background-img(url('img/small_pic_06.jpg'));
+
         }
       }
       &:last-child {
@@ -227,10 +377,450 @@ header {
         justify-content: center;
         align-items: flex-start;
         background-color: $white;
-        height: 177px;
+        height: 158px;
         box-sizing: border-box;
-        padding: 35px;
+        padding: 25px;
         font-family: ProximaNovaLight;
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      display: flex;
+      width: 100%;
+      height: auto;
+      background-color: rgba(0,0,0,0);
+      margin-top: 80px;
+      flex-direction: column;
+      .card {
+        display: flex;
+        height: 150px;
+        width: 100%;
+        background-color: #f0f0f0;
+        margin: 5px 0;
+        h2 {
+          height: 100%;
+          width: 150px;
+        }
+        p {
+          height: 100%;
+          width: calc(100% - 150px);
+          align-items: center;
+          background-color: rgba(0,0,0,0);
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+.use-of-bamboo-straws {
+  width: 100%;
+  h1 {
+    height: 594px;
+    margin-left: 0 !important;
+    margin-bottom: 30px;
+    padding: 70px 0 0 211px;
+    @include background-img(url('img/big_pic_05.jpg'));
+    @include media(">phone", "<=tablet") {
+      @include background-img(url('img/smartphone/m_big_pic_05.jpg'));
+      padding: 10px 0 0 10%;
+    }
+  }
+  .photo-container-1, .photo-container-2 {
+    display: flex;
+    position: relative;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    div {
+      position: absolute;
+      background-color: $white;
+      padding: 30px 50px 0 50px;
+      box-sizing: border-box;
+      h2 {
+        margin-bottom: 5px;
+        letter-spacing: 3px;
+      }
+      p {
+        line-height: 1.2em;
+      }
+    }
+    img {
+      height: auto;
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+  .photo-container-1 {
+    div:first-child {
+      height: 244px;
+      width: 248px;
+      top: -20%;
+      left: 26.5%;
+    }
+    img {
+      &:nth-child(2) {
+        margin-top: 100px;
+        width: 360px;
+        height: 347px;
+      }
+      &:nth-child(3) {
+        margin-top: -10px;
+        width: 221px;
+        height: 454px;
+      }
+      &:last-child {
+        margin-top: 80px;
+        width: 264px;
+        height: 430px;
+      }
+    }
+  }
+  .photo-container-2 {
+    width: 878px;
+    margin: 60px auto 0 auto;
+    div {
+      height: 196px;
+      width: 499px;
+      top: -28%;
+      right: 83px;
+    }
+    img {
+      with: 319px;
+      height: 319px;
+    }
+  }
+  @include media(">phone", "<=549px") {
+    .photo-container-1, .photo-container-2 {
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin: 2.5% 0;
+      div {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 60% !important;
+        left: 0 !important;
+        margin: 5px !important;
+        &:first-child {
+          padding: 15px;
+        }
+        &:nth-child(2) {
+          min-height: 250px;
+          padding: 5px;
+        }
+      }
+      img {
+        height: auto !important;
+        width: 60% !important;
+        margin: .5% !important;
+        max-height: 390px !important;
+      }
+    }
+  }
+
+  @include media(">549px", "<=tablet") {
+    .photo-container-1, .photo-container-2 {
+      width: 100%;
+      flex-wrap: wrap;
+      margin: 2.5% 0;
+      div {
+        position: relative;
+        width: 48% !important;
+        left: 0 !important;
+        margin: 5px !important;
+        &:first-child {
+          padding: 15px;
+        }
+        &:nth-child(2) {
+          min-height: 250px;
+          padding: 5px;
+        }
+      }
+      img {
+      height: auto !important;
+      width: 48% !important;
+      margin: .5% !important;
+      max-height: 390px !important;
+      }
+    }
+  }
+}
+
+.about-us {
+  position: relative;
+  height: auto;
+  @include background-img(url('img/big_pic_06.jpg'));
+  margin-top: 52px;
+  padding: 70px 0;
+  @include media (">phone", "<=tablet") {
+    @include background-img(url('img/smartphone/m_big_pic_06.jpg'));
+  }
+  h1 {
+    margin-bottom:80px;
+    @include media (">phone", "<=tablet") {
+      margin-top: 0;
+    }
+  }
+  ul, p:last-child, .brown-logo{
+    margin-left: 250px;
+    @include media (">phone", "<=tablet") {
+      margin-left: 30px;
+    }
+  }
+  .brown-logo {
+    width: 158px;
+    margin-bottom: 20px;
+  }
+  div {
+    position: absolute;
+    height: 422px;
+    width: 384px;
+    top: 0;
+    right: 10%;
+    background-color: $white;
+    padding: 50px;
+    box-sizing: border-box;
+    p {
+      margin: 0 !important;
+      color: $grey-light;
+      font-family: GeorgiaBold;
+      font-size: 1.8em;
+      @include media (">phone", "<=tablet") {
+        font-size: 1.06em;
+      }
+    }
+    @include media (">phone", "<=tablet") {
+      height: 200px;
+      width: 210px;
+      top: 160px;
+      right:0;
+      padding: 15px;
+    }
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    img {
+      width: 63px;
+      margin-bottom: 10px;
+      @include media (">phone", "<=tablet") {
+        position: relative;
+        width: 40px;
+      }
+    }
+    h2 {
+      width: 0;
+      color: $white;
+      letter-spacing: 5px;
+      @include media (">phone", "<=tablet") {
+        font-size: 1.2em;
+      }
+    }
+    p {
+      margin-left: 0 !important;
+      margin-bottom: 30px;
+      @include media (">phone", "<=tablet") {
+        font-size: 0.8em;
+      }
+    }
+    &:nth-child(2){
+      img{
+        width: 48px;
+        @include media (">phone", "<=tablet") {
+          width: 35px;
+        }
+      }
+    }
+    &:last-child {
+      img{
+        width: 32px;
+        @include media (">phone", "<=tablet") {
+          width: 26px;
+        }
+      }
+    }
+    @include media(">phone", "<=tablet") {
+      img  {
+        display: none;
+      }
+    }
+  }
+  p {
+    color: #323A42;
+    @include media (">phone", "<=tablet") {
+      font-size: 0.8em;
+    }
+  }
+  @include media (">phone", "<=tablet") {
+    padding: 10px 0;
+    font-family: ProximaNovaBold;
+  }
+}
+
+.contact-us {
+  display: flex;
+  height: 1000px;
+  flex-direction: column;
+  @include background-img(url('img/big_pic_07.jpg'));
+  ul {
+    margin-top: 150px;
+    margin-left: 250px;
+    li {
+      list-style: none;
+      font-size: 1.4em;
+      &:first-child {
+        letter-spacing: 5px;
+      }
+      a {
+        text-decoration: none;
+        color: $grey-light;
+      }
+      &:last-child {
+        margin-top: 15px;
+        font-size: 2.4em;
+      }
+    }
+  }
+  @include media (">phone", "<=tablet") {
+    height: 380px;
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    ul {
+      width: 80%;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      li {
+        font-size: 1em;
+        &:last-child {
+          margin-top: 15px;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+.newsletter {
+  display: flex;
+  position: relative;
+  height: 750px;
+  @include background-img(url('img/big_pic_08.jpg'));
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 140px;
+  h1 {
+    position: absolute;
+    top: 70px;
+    left: 210Px;
+    margin: 0;
+    color: $grey-light;
+  }
+  p {
+    color: $white;
+    margin-bottom: 60px;
+    font-size: 1.3em;
+  }
+  input[type=email] {
+    width: 450px;
+    height: 50px;
+    background-color: rgba(0,0,0,0.4);
+    border: 2px solid $white;
+    font-size: 1em;
+    color: $white;
+    padding: 0 35px;
+    box-sizing: border-box;
+  }
+  input[type=submit] {
+    width: 250px;
+    height: 54px;
+    letter-spacing: 3px;
+    font-size: 1em;
+    background-color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    border: none;
+    font-family: ProximaNovaBold;
+  }
+  @include media (">phone", "<=tablet") {
+    padding-bottom: 0;
+    h1 {
+      top: 10px;
+      left: 10%;
+    }
+    height: 350px;
+    p {
+      display: none;
+    }
+    form {
+      width: 80%;
+      margin: 65px auto 25px auto;
+      input {
+        margin-top: 25px;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  display: flex;
+  height: 800px;
+  @include background-img(url('img/big_pic_09.jpg'));
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 300px;
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+        margin: 23px 23px 40px 23px;
+        img {
+          width: 60px;
+          box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    .logo{
+      width: 120px;
+    }
+  }
+  p{
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 400px);
+    img {
+      width: 800px;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+  @include media (">phone", "<=tablet") {
+    height: 400px;
+    @include background-img(url('img/smartphone/m_big_pic_09.jpg'));
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    div {
+      margin-top: 80px;
+    }
+    p {
+      height: 30px;
+      width: 100%;
+      left: 0;
+      img {
+        width: 100%;
+        height: 30px;
       }
     }
   }
