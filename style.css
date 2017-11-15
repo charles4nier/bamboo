@@ -11,6 +11,9 @@
   src: url(fonts/GOTHAM-LIGHT_0.ttf);
   font-weight: bold; }
 @font-face {
+  font-family: GothamThin;
+  src: url(fonts/Gotham-Thin.otf); }
+@font-face {
   font-family: GeorgiaBold;
   src: url(fonts/georgiab.ttf);
   font-weight: bold; }
@@ -26,13 +29,16 @@ html, body {
   font-family: ProximaNovaLight; }
 
 h1 {
-  font-family: GothamLight;
+  font-family: GothamThin;
   color: white;
   font-size: 3.5em;
-  line-height: 1em;
-  margin-top: 52px;
-  margin-left: 10%; }
-@media (min-width: 321px) and (max-width: 768px) {
+  line-height: 30em;
+  letter-spacing: 0.2em;
+  margin-left: 15%;
+  height: 250px;
+  overflow: hidden;
+  transform-origin: 0% 50%; }
+@media (min-width: 321px) and (max-width: 750px) {
   h1 {
     font-size: 2.2em;
     letter-spacing: 3px;
@@ -41,7 +47,8 @@ h1 {
 .card-container {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .brown-content {
   color: #A17644;
@@ -81,17 +88,20 @@ header {
   position: relative;
   display: flex;
   height: 100vh;
-  background: url("img/big_pic_01.jpg") center center no-repeat;
+  opacity: 0;
+  background: url("img/1500_big_pic_01.jpg") center center no-repeat;
   background-size: cover;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 300px; }
+  margin-bottom: 220px; }
   header h1 {
-    margin: 0 auto 350px auto; }
+    opacity: 0;
+    margin: 0 auto 350px auto;
+    line-height: 5em; }
     header h1 img {
       width: 198px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   header h1 {
     margin-top: 35px; }
     header h1 img {
@@ -99,12 +109,13 @@ header {
 
   header .white-container {
     display: flex;
-    height: 285px;
-    width: 800px;
-    background-color: white;
+    height: 232px;
+    width: 662px;
+    background-color: #E0DAD8;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: -178px; }
+    margin-bottom: -170px;
+    transform: translate3d(0, 650px, 0); }
     header .white-container div {
       display: flex;
       height: 100%;
@@ -113,10 +124,12 @@ header {
       align-items: flex-start;
       justify-content: center; }
       header .white-container div p {
-        width: 475px;
+        width: 480px;
         margin: 0 auto;
         line-height: 1.2em;
-        font-size: 1.2em; }
+        font-size: 1em;
+        padding-left: 60px;
+        box-sizing: border-box; }
         header .white-container div p:first-child {
           margin-bottom: 15px; }
 @media (min-width: 321px) and (max-width: 480px) {
@@ -124,34 +137,34 @@ header {
     font-size: 0.6em;
     width: 55%; } }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 750px) {
   header .white-container div p {
     width: 60%;
     font-size: 0.7em; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   header .white-container div {
     height: auto; } }
 
     header .white-container img {
-      height: 286px;
-      width: 225px; }
+      height: 232px;
+      width: 182px; }
 @media (min-width: 321px) and (max-width: 480px) {
   header .white-container img {
     width: 45%;
     height: auto; } }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 750px) {
   header .white-container img {
     width: 40%;
     height: auto; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   header .white-container {
     height: auto;
     width: 100%; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   header {
     background: url("img/smartphone/m_big_pic_01.jpg") center center no-repeat;
     background-size: cover;
@@ -165,66 +178,105 @@ header {
   .the-bamboo-straws .the-bamboo-title-container {
     display: flex;
     position: relative;
-    height: 650px;
+    height: 594px;
     width: 100%;
-    background: url("img/big_pic_02.jpg") center center no-repeat;
+    background: url("img/1500_big_pic_02.jpg") center center no-repeat;
     background-size: cover;
     flex-direction: column;
     justify-content: space-between; }
+    .the-bamboo-straws .the-bamboo-title-container h1 {
+      margin-top: 58px; }
     .the-bamboo-straws .the-bamboo-title-container h1, .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
       margin-left: 14%; }
     .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
+      position: relative;
+      width: 350px;
       font-family: ProximaNovaBold;
-      font-size: 1.2em;
+      font-size: 0.9em;
       margin-bottom: 70px;
-      color: white !important; }
-@media (min-width: 321px) and (max-width: 768px) {
+      color: white !important;
+      opacity: 1;
+      overflow: hidden; }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2):after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: white;
+        content: '';
+        transform: translate3d(-1000px, 0, 0);
+        transition: .8s ease-out; }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) span {
+        opacity: 0;
+        transform: translate3d(-1000px, 0, 0);
+        transition: .2s ease-out; }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterLeftIn:after {
+        transform: translate3d(0, 0, 0) !important;
+      }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut span {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut:after {
+        transform: translate3d(700px, 0, 0) !important;
+      }
+@media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
     font-size: 0.8em; } }
 
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) .afterLeftIn:after {
+        transform: translate3d(0, 0, 0) !important; }
+      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) .afterLeftIn span {
+        opacity: 1; }
     .the-bamboo-straws .the-bamboo-title-container .white-square {
       display: flex;
       position: absolute;
       height: 230px;
       width: 346px;
-      bottom: -80px;
+      bottom: -140px;
       right: 26%;
       background-color: white;
       align-items: center;
       justify-content: center;
-      font-size: 2em; }
-@media (min-width: 321px) and (max-width: 768px) {
+      font-size: 2em;
+      opacity: 1;
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      z-index: 400; }
+@media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .the-bamboo-title-container .white-square {
     height: 115px;
     width: 177px;
     font-size: 1.2em;
     right: 3%; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .the-bamboo-title-container {
     height: 350px; } }
 
   .the-bamboo-straws .card-container {
     margin-top: 60px;
-    margin-bottom: -10%; }
+    margin-bottom: -159px; }
     .the-bamboo-straws .card-container .card {
       display: flex;
-      height: 423px;
-      width: 260px;
+      height: 373px;
+      width: 248px;
       align-items: flex-end;
-      margin: 0 5px; }
-@media (min-width: 321px) and (max-width: 768px) {
+      margin: 0 5px;
+      transform: translate3d(0, 1000px, 0); }
+@media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .card-container .card {
     margin: 0 2px; } }
 
       .the-bamboo-straws .card-container .card:first-child {
-        background: url("img/small_pic_02.jpg") center center no-repeat;
+        background: url("img/all_small_pic_02.jpg") center center no-repeat;
         background-size: cover; }
       .the-bamboo-straws .card-container .card:nth-child(2) {
-        background: url("img/small_pic_03.jpg") center center no-repeat;
+        background: url("img/all_small_pic_03.jpg") center center no-repeat;
         background-size: cover; }
       .the-bamboo-straws .card-container .card:last-child {
-        background: url("img/small_pic_04.jpg") center center no-repeat;
+        background: url("img/all_small_pic_04.jpg") center center no-repeat;
         background-size: cover; }
       .the-bamboo-straws .card-container .card p {
         margin: 20px;
@@ -237,7 +289,7 @@ header {
   .the-bamboo-straws .card-container .card p {
     font-size: 0.7em; } }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 750px) {
   .the-bamboo-straws .card-container .card p {
     font-size: 0.9em; } }
 
@@ -246,22 +298,22 @@ header {
     height: 187px;
     width: 98px; } }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 750px) {
   .the-bamboo-straws .card-container .card {
     height: 257px;
     width: 158px; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .card-container {
     margin-bottom: 0; } }
 
 .purchase {
   height: 956px;
   width: 100%;
-  background: url("img/big_pic_03.jpg") center center no-repeat;
+  background: url("img/1500_big_pic_03.jpg") center center no-repeat;
   background-size: cover;
   margin-bottom: 52px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .purchase {
     height: 356px;
     margin: 42px 0;
@@ -271,22 +323,22 @@ header {
 .the-change .the-change-title-container {
   position: relative;
   height: 594Px;
-  background: url("img/big_pic_04.jpg") center center no-repeat;
+  background: url("img/1500_big_pic_04.jpg") center center no-repeat;
   background-size: cover;
   padding-top: 10px; }
   .the-change .the-change-title-container h1 {
-    margin-top: 0; }
+    margin-top: 58px; }
   .the-change .the-change-title-container p {
     position: absolute;
-    height: 266px;
-    width: 710px;
+    height: 178px;
+    width: 657px;
     bottom: -150px;
-    left: calc(50% - 360px);
+    left: calc(50% - 328.5px);
     background-color: white;
     box-sizing: border-box;
-    padding: 60px 100px;
+    padding: 45px 100px;
     font-size: 1.1em; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-change .the-change-title-container p {
     font-size: 0.8em;
     width: 90%;
@@ -297,7 +349,7 @@ header {
     .the-change .the-change-title-container p .break-none {
       content: ' '; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-change .the-change-title-container {
     height: 394Px;
     background: url("img/smartphone/m_big_pic_04.jpg") center center no-repeat;
@@ -307,42 +359,46 @@ header {
   display: flex;
   height: auto;
   background-color: #f0f0f0;
-  margin-top: 160px; }
+  margin-top: 20px;
+  padding-top: 160px;
+  padding-bottom: 40px;
+  box-sizing: border-box; }
   .the-change .card-container .card {
-    width: 270px;
-    margin: 0 5px; }
+    width: 227px;
+    margin: 0 5px;
+    transform: translate3d(0, 1000px, 0); }
     .the-change .card-container .card h2 {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      height: 270px;
-      background: url("img/small_pic_05.jpg") center center no-repeat;
+      height: 227px;
+      background: url("img/all_small_pic_05.jpg") center center no-repeat;
       background-size: cover;
       padding-bottom: 15px;
       box-sizing: border-box;
       font-family: GothamBold;
       color: white; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-change .card-container .card h2 {
     width: 150px;
     height: 150px; } }
 
     .the-change .card-container .card:nth-child(2) h2 {
-      background: url("img/small_pic_06.jpg") center center no-repeat;
+      background: url("img/all_small_pic_06.jpg") center center no-repeat;
       background-size: cover; }
     .the-change .card-container .card:last-child h2 {
-      background: url("img/small_pic_07.jpg") center center no-repeat;
+      background: url("img/all_small_pic_07.jpg") center center no-repeat;
       background-size: cover; }
     .the-change .card-container .card p {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       background-color: white;
-      height: 158px;
+      height: 162px;
       box-sizing: border-box;
       padding: 25px;
       font-family: ProximaNovaLight; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .the-change .card-container {
     display: flex;
     width: 100%;
@@ -373,9 +429,9 @@ header {
     margin-left: 0 !important;
     margin-bottom: 30px;
     padding: 70px 0 0 211px;
-    background: url("img/big_pic_05.jpg") center center no-repeat;
+    background: url("img/1500_big_pic_05.jpg") center center no-repeat;
     background-size: cover; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .use-of-bamboo-straws h1 {
     background: url("img/smartphone/m_big_pic_05.jpg") center center no-repeat;
     background-size: cover;
@@ -385,12 +441,13 @@ header {
     display: flex;
     position: relative;
     height: auto;
+    width: 715px;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; }
     .use-of-bamboo-straws .photo-container-1 div, .use-of-bamboo-straws .photo-container-2 div {
-      position: absolute;
       background-color: white;
-      padding: 30px 50px 0 50px;
       box-sizing: border-box; }
       .use-of-bamboo-straws .photo-container-1 div h2, .use-of-bamboo-straws .photo-container-2 div h2 {
         margin-bottom: 5px;
@@ -402,33 +459,34 @@ header {
       margin-left: 6px;
       margin-right: 6px; }
   .use-of-bamboo-straws .photo-container-1 div:first-child {
-    height: 244px;
-    width: 248px;
+    position: absolute;
+    height: 228px;
+    width: 228px;
     top: -20%;
-    left: 26.5%; }
+    left: 26px;
+    padding: 30px 50px 0 50px; }
   .use-of-bamboo-straws .photo-container-1 img:nth-child(2) {
-    margin-top: 100px;
-    width: 360px;
-    height: 347px; }
+    margin-top: 102px;
+    width: 270px;
+    height: 258px; }
   .use-of-bamboo-straws .photo-container-1 img:nth-child(3) {
     margin-top: -10px;
-    width: 221px;
-    height: 454px; }
+    width: 185px;
+    height: 371px; }
   .use-of-bamboo-straws .photo-container-1 img:last-child {
-    margin-top: 80px;
-    width: 264px;
-    height: 430px; }
+    margin-top: 34px;
+    width: 224px;
+    height: 327px; }
   .use-of-bamboo-straws .photo-container-2 {
-    width: 878px;
-    margin: 60px auto 0 auto; }
+    margin: 0 auto;
+    flex-wrap: wrap; }
     .use-of-bamboo-straws .photo-container-2 div {
-      height: 196px;
-      width: 499px;
-      top: -28%;
-      right: 83px; }
+      height: 157px;
+      width: 100%;
+      padding: 25px 50px 0 50px; }
     .use-of-bamboo-straws .photo-container-2 img {
-      with: 319px;
-      height: 319px; }
+      width: 223px;
+      height: 223px; }
 @media (min-width: 321px) and (max-width: 549px) {
   .use-of-bamboo-straws .photo-container-1, .use-of-bamboo-straws .photo-container-2 {
     width: 100%;
@@ -455,7 +513,7 @@ header {
       margin: .5% !important;
       max-height: 390px !important; } }
 
-@media (min-width: 550px) and (max-width: 768px) {
+@media (min-width: 550px) and (max-width: 750px) {
   .use-of-bamboo-straws .photo-container-1, .use-of-bamboo-straws .photo-container-2 {
     width: 100%;
     flex-wrap: wrap;
@@ -478,37 +536,28 @@ header {
 
 .about-us {
   position: relative;
-  height: auto;
-  background: url("img/big_pic_06.jpg") center center no-repeat;
+  height: 1160px;
+  background: url("img/1500_big_pic_06.jpg") center center no-repeat;
   background-size: cover;
   margin-top: 52px;
   padding: 70px 0; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us {
     background: url("img/smartphone/m_big_pic_06.jpg") center center no-repeat;
     background-size: cover; } }
 
   .about-us h1 {
     margin-bottom: 80px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us h1 {
     margin-top: 0; } }
 
-  .about-us ul, .about-us p:last-child, .about-us .brown-logo {
-    margin-left: 250px; }
-@media (min-width: 321px) and (max-width: 768px) {
-  .about-us ul, .about-us p:last-child, .about-us .brown-logo {
-    margin-left: 30px; } }
-
-  .about-us .brown-logo {
-    width: 158px;
-    margin-bottom: 20px; }
   .about-us div {
     position: absolute;
-    height: 422px;
-    width: 384px;
+    height: 435px;
+    width: 337px;
     top: 0;
-    right: 10%;
+    right: 25%;
     background-color: white;
     padding: 50px;
     box-sizing: border-box; }
@@ -517,17 +566,23 @@ header {
       color: #7B8084;
       font-family: GeorgiaBold;
       font-size: 1.8em; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us div p {
     font-size: 1.06em; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us div {
     height: 200px;
     width: 210px;
     top: 160px;
     right: 0;
     padding: 15px; } }
+
+  .about-us ul {
+    margin-left: 25%; }
+@media (min-width: 321px) and (max-width: 750px) {
+  .about-us ul {
+    margin-left: 30px; } }
 
   .about-us li {
     display: flex;
@@ -536,7 +591,7 @@ header {
     .about-us li img {
       width: 63px;
       margin-bottom: 10px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li img {
     position: relative;
     width: 40px; } }
@@ -545,56 +600,59 @@ header {
       width: 0;
       color: white;
       letter-spacing: 5px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li h2 {
     font-size: 1.2em; } }
 
     .about-us li p {
       margin-left: 0 !important;
       margin-bottom: 30px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li p {
     font-size: 0.8em; } }
 
     .about-us li:nth-child(2) img {
       width: 48px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li:nth-child(2) img {
     width: 35px; } }
 
     .about-us li:last-child img {
       width: 32px; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li:last-child img {
     width: 26px; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us li img {
     display: none; } }
 
   .about-us p {
     color: #323A42; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us p {
     font-size: 0.8em; } }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .about-us {
     padding: 10px 0;
     font-family: ProximaNovaBold; } }
 
 .contact-us {
   display: flex;
-  height: 1000px;
+  height: 594px;
   flex-direction: column;
-  background: url("img/big_pic_07.jpg") center center no-repeat;
+  background: url("img/1500_big_pic_07.jpg") center center no-repeat;
   background-size: cover; }
+  .contact-us h1 {
+    margin-top: 58px;
+    margin-bottom: 60px;
+    color: #7B8084; }
   .contact-us ul {
-    margin-top: 150px;
-    margin-left: 250px; }
+    margin-left: 23%; }
     .contact-us ul li {
       list-style: none;
-      font-size: 1.4em; }
+      font-size: 1.2em; }
       .contact-us ul li:first-child {
         letter-spacing: 5px; }
       .contact-us ul li a {
@@ -602,8 +660,8 @@ header {
         color: #7B8084; }
       .contact-us ul li:last-child {
         margin-top: 15px;
-        font-size: 2.4em; }
-@media (min-width: 321px) and (max-width: 768px) {
+        font-size: 2em; }
+@media (min-width: 321px) and (max-width: 750px) {
   .contact-us {
     height: 380px; }
     .contact-us h1 {
@@ -623,8 +681,8 @@ header {
 .newsletter {
   display: flex;
   position: relative;
-  height: 750px;
-  background: url("img/big_pic_08.jpg") center center no-repeat;
+  height: 594px;
+  background: url("img/1500_big_pic_08.jpg") center center no-repeat;
   background-size: cover;
   justify-content: flex-end;
   align-items: center;
@@ -638,11 +696,13 @@ header {
     margin: 0;
     color: #7B8084; }
   .newsletter p {
-    color: white;
-    margin-bottom: 60px;
-    font-size: 1.3em; }
+    color: #7B8084;
+    margin-bottom: 140px;
+    margin-left: -7%;
+    font-size: 1.3em;
+    width: 200px; }
   .newsletter input[type=email] {
-    width: 450px;
+    width: 378px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid white;
@@ -651,15 +711,15 @@ header {
     padding: 0 35px;
     box-sizing: border-box; }
   .newsletter input[type=submit] {
-    width: 250px;
-    height: 54px;
+    width: 156px;
+    height: 50px;
     letter-spacing: 3px;
     font-size: 1em;
     background-color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     border: none;
     font-family: ProximaNovaBold; }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   .newsletter {
     padding-bottom: 0;
     height: 350px; }
@@ -678,23 +738,25 @@ header {
 footer {
   position: relative;
   display: flex;
-  height: 800px;
-  background: url("img/big_pic_09.jpg") center center no-repeat;
+  height: 754px;
+  background: url("img/1500_big_pic_09.jpg") center center no-repeat;
   background-size: cover; }
+  footer h1 {
+    margin-top: 58px; }
   footer div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 300px; }
+    margin-top: 250px;
+    margin-left: 8%; }
     footer div ul {
       display: flex; }
       footer div ul li {
         list-style: none;
-        margin: 23px 23px 40px 23px; }
+        margin: 23px 3px 40px 3px; }
         footer div ul li img {
-          width: 60px;
-          box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2); }
+          width: 102px; }
     footer div .logo {
       width: 120px; }
   footer p {
@@ -704,7 +766,7 @@ footer {
     footer p img {
       width: 800px;
       box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2); }
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 750px) {
   footer {
     height: 400px;
     background: url("img/smartphone/m_big_pic_09.jpg") center center no-repeat;

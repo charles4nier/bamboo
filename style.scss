@@ -19,10 +19,19 @@
 }
 
 @font-face {
+  font-family: GothamThin;
+  src: url(fonts/Gotham-Thin.otf);
+}
+
+@font-face {
   font-family: GeorgiaBold;
   src: url(fonts/georgiab.ttf);
   font-weight: bold;
 }
+
+
+
+
 
 $white: white;
 $brown: #A17644;
@@ -59,14 +68,16 @@ html, body {
   color: $grey-light;
   font-family: ProximaNovaLight;
 }
-
 h1 {
-  font-family: GothamLight;
+  font-family: GothamThin;
   color: $white;
   font-size: 3.5em;
-  line-height: 1em;
-  margin-top: 52px;
-  margin-left: 10%;
+  line-height: 30em;
+  letter-spacing: 0.2em;
+  margin-left: 15%;
+  height: 250px;
+  overflow: hidden;
+  transform-origin: 0% 50%;
   @include media(">phone", "<=tablet") {
     font-size: 2.2em;
     letter-spacing: 3px;
@@ -78,6 +89,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .brown-content {
@@ -116,13 +128,16 @@ header {
   position: relative;
   display: flex;
   height: 100vh;
-  @include background-img(url('img/big_pic_01.jpg'));
+  opacity: 0;
+  @include background-img(url('img/1500_big_pic_01.jpg'));
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 300px;
+  margin-bottom: 220px;
   h1 {
+    opacity: 0;
     margin: 0 auto 350px auto;
+    line-height: 5em;
     img {
       width: 198px;
     }
@@ -132,15 +147,19 @@ header {
         width: 130px;
       }
     }
+    .entrance {
+
+    }
   }
   .white-container {
     display: flex;
-    height: 285px;
-    width: 800px;
-    background-color: $white;
+    height: 232px;
+    width: 662px;
+    background-color: #E0DAD8;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: -178px;
+    margin-bottom: -170px;
+    transform: translate3d(0, 650px, 0);
       div {
         display: flex;
         height: 100%;
@@ -149,10 +168,12 @@ header {
         align-items: flex-start;
         justify-content: center;
         p {
-          width: 475px;
+          width: 480px;
           margin: 0 auto;
           line-height: 1.2em;
-          font-size: 1.2em;
+          font-size: 1em;
+          padding-left: 60px;
+          box-sizing: border-box;
           &:first-child {
             margin-bottom: 15px;
           }
@@ -171,8 +192,8 @@ header {
       }
 
     img {
-      height: 286px;
-      width: 225px;
+      height: 232px;
+      width: 182px;
       @include media(">phone", "<=480px") {
         width: 45%;
         height: auto;
@@ -201,21 +222,51 @@ header {
   .the-bamboo-title-container {
     display: flex;
     position: relative;
-    height: 650px;
+    height: 594px;
     width: 100%;
-    @include background-img(url('img/big_pic_02.jpg'));
+    @include background-img(url('img/1500_big_pic_02.jpg'));
     flex-direction: column;
     justify-content: space-between;
+    h1 {
+      margin-top: 58px;
+    }
     h1, p:nth-child(2) {
       margin-left: 14%;
     }
     p:nth-child(2) {
+      position: relative;
+      width: 350px;
       font-family: ProximaNovaBold;
-      font-size: 1.2em;
+      font-size: 0.9em;
       margin-bottom: 70px;
       color: $white !important;
+      opacity: 1;
+      overflow: hidden;
+      &:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        content: '';
+        transform: translate3d(1000px, 0, 0);
+        transition: .8s ease-out;
+      }
+      span {
+        opacity: 0;
+        transition: .8s ease-out .2s;
+      }
       @include media(">phone", "<=tablet") {
         font-size: 0.8em;
+      }
+      .afterLeftIn {
+        &:after {
+          transform: translate3d(0, 0, 0) !important;
+        }
+        span {
+          opacity: 1;
+        }
       }
     }
     .white-square {
@@ -223,12 +274,14 @@ header {
       position: absolute;
       height: 230px;
       width: 346px;
-      bottom: -80px;
+      bottom: -140px;
       right: 26%;
       background-color: $white;
       align-items: center;
       justify-content: center;
       font-size: 2em;
+      opacity: 0;
+      z-index: 400;
       @include media(">phone", "<=tablet") {
         height: 115px;
         width: 177px;
@@ -242,24 +295,25 @@ header {
   }
   .card-container {
     margin-top: 60px;
-    margin-bottom: -10%;
+    margin-bottom: -159px;
     .card {
       display: flex;
-      height: 423px;
-      width: 260px;
+      height: 373px;
+      width: 248px;
       align-items: flex-end;
       margin: 0 5px;
+      transform: translate3d(0, 1000px, 0);
       @include media(">phone", "<=tablet") {
         margin: 0 2px;
       }
       &:first-child {
-        @include background-img(url('img/small_pic_02.jpg'));
+        @include background-img(url('img/all_small_pic_02.jpg'));
       }
       &:nth-child(2) {
-        @include background-img(url('img/small_pic_03.jpg'));
+        @include background-img(url('img/all_small_pic_03.jpg'));
       }
       &:last-child {
-        @include background-img(url('img/small_pic_04.jpg'));
+        @include background-img(url('img/all_small_pic_04.jpg'));
       }
       p {
         margin: 20px;
@@ -293,7 +347,7 @@ header {
 .purchase {
   height: 956px;
   width: 100%;
-  @include background-img(url('img/big_pic_03.jpg'));
+  @include background-img(url('img/1500_big_pic_03.jpg'));
   margin-bottom: 52px;
   @include media(">phone", "<=tablet") {
     height: 356px;
@@ -306,20 +360,20 @@ header {
   .the-change-title-container {
     position: relative;
     height: 594Px;
-    @include background-img(url('img/big_pic_04.jpg'));
+    @include background-img(url('img/1500_big_pic_04.jpg'));
     padding-top: 10px;
     h1 {
-      margin-top: 0;
+      margin-top: 58px;
     }
     p {
       position: absolute;
-      height: 266px;
-      width: 710px;
+      height: 178px;
+      width: 657px;
       bottom: -150px;
-      left: calc(50% - 360px);
+      left: calc(50% - 328.5px);
       background-color: $white;
       box-sizing: border-box;
-      padding: 60px 100px;
+      padding: 45px 100px;
       font-size: 1.1em;
       @include media(">phone", "<=tablet") {
         font-size: 0.8em;
@@ -342,16 +396,20 @@ header {
     display: flex;
     height: auto;
     background-color: #f0f0f0;
-    margin-top: 160px;
+    margin-top: 20px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
     .card {
-      width: 270px;
+      width: 227px;
       margin: 0 5px;
+      transform: translate3d(0, 1000px, 0);
       h2 {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        height: 270px;
-        @include background-img(url('img/small_pic_05.jpg'));
+        height: 227px;
+        @include background-img(url('img/all_small_pic_05.jpg'));
         padding-bottom: 15px;
         box-sizing: border-box;
         font-family: GothamBold;
@@ -363,13 +421,13 @@ header {
       }
       &:nth-child(2) {
         h2 {
-          @include background-img(url('img/small_pic_06.jpg'));
+          @include background-img(url('img/all_small_pic_06.jpg'));
 
         }
       }
       &:last-child {
         h2 {
-          @include background-img(url('img/small_pic_07.jpg'));
+          @include background-img(url('img/all_small_pic_07.jpg'));
         }
       }
       p {
@@ -377,7 +435,7 @@ header {
         justify-content: center;
         align-items: flex-start;
         background-color: $white;
-        height: 158px;
+        height: 162px;
         box-sizing: border-box;
         padding: 25px;
         font-family: ProximaNovaLight;
@@ -419,7 +477,7 @@ header {
     margin-left: 0 !important;
     margin-bottom: 30px;
     padding: 70px 0 0 211px;
-    @include background-img(url('img/big_pic_05.jpg'));
+    @include background-img(url('img/1500_big_pic_05.jpg'));
     @include media(">phone", "<=tablet") {
       @include background-img(url('img/smartphone/m_big_pic_05.jpg'));
       padding: 10px 0 0 10%;
@@ -429,12 +487,13 @@ header {
     display: flex;
     position: relative;
     height: auto;
+    width: 715px;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     div {
-      position: absolute;
       background-color: $white;
-      padding: 30px 50px 0 50px;
       box-sizing: border-box;
       h2 {
         margin-bottom: 5px;
@@ -452,41 +511,42 @@ header {
   }
   .photo-container-1 {
     div:first-child {
-      height: 244px;
-      width: 248px;
+      position: absolute;
+      height: 228px;
+      width: 228px;
       top: -20%;
-      left: 26.5%;
+      left: 26px;
+      padding: 30px 50px 0 50px;
     }
     img {
       &:nth-child(2) {
-        margin-top: 100px;
-        width: 360px;
-        height: 347px;
+        margin-top: 102px;
+        width: 270px;
+        height: 258px;
       }
       &:nth-child(3) {
         margin-top: -10px;
-        width: 221px;
-        height: 454px;
+        width: 185px;
+        height: 371px;
       }
       &:last-child {
-        margin-top: 80px;
-        width: 264px;
-        height: 430px;
+        margin-top: 34px;
+        width: 224px;
+        height: 327px;
       }
     }
   }
   .photo-container-2 {
-    width: 878px;
-    margin: 60px auto 0 auto;
+    margin: 0 auto;
+    flex-wrap: wrap;
     div {
-      height: 196px;
-      width: 499px;
-      top: -28%;
-      right: 83px;
+      height: 157px;
+      width: 100%;
+      padding: 25px 50px 0 50px;
     }
     img {
-      with: 319px;
-      height: 319px;
+      width: 223px;
+      height: 223px;
     }
   }
   @include media(">phone", "<=549px") {
@@ -551,8 +611,8 @@ header {
 
 .about-us {
   position: relative;
-  height: auto;
-  @include background-img(url('img/big_pic_06.jpg'));
+  height: 1160px;
+  @include background-img(url('img/1500_big_pic_06.jpg'));
   margin-top: 52px;
   padding: 70px 0;
   @include media (">phone", "<=tablet") {
@@ -564,22 +624,13 @@ header {
       margin-top: 0;
     }
   }
-  ul, p:last-child, .brown-logo{
-    margin-left: 250px;
-    @include media (">phone", "<=tablet") {
-      margin-left: 30px;
-    }
-  }
-  .brown-logo {
-    width: 158px;
-    margin-bottom: 20px;
-  }
+
   div {
     position: absolute;
-    height: 422px;
-    width: 384px;
+    height: 435px;
+    width: 337px;
     top: 0;
-    right: 10%;
+    right: 25%;
     background-color: $white;
     padding: 50px;
     box-sizing: border-box;
@@ -598,6 +649,12 @@ header {
       top: 160px;
       right:0;
       padding: 15px;
+    }
+  }
+  ul{
+    margin-left: 25%;
+    @include media (">phone", "<=tablet") {
+      margin-left: 30px;
     }
   }
   li {
@@ -663,15 +720,19 @@ header {
 
 .contact-us {
   display: flex;
-  height: 1000px;
+  height: 594px;
   flex-direction: column;
-  @include background-img(url('img/big_pic_07.jpg'));
+  @include background-img(url('img/1500_big_pic_07.jpg'));
+  h1 {
+    margin-top: 58px;
+    margin-bottom: 60px;
+    color: $grey-light;
+  }
   ul {
-    margin-top: 150px;
-    margin-left: 250px;
+    margin-left: 23%;
     li {
       list-style: none;
-      font-size: 1.4em;
+      font-size: 1.2em;
       &:first-child {
         letter-spacing: 5px;
       }
@@ -681,7 +742,7 @@ header {
       }
       &:last-child {
         margin-top: 15px;
-        font-size: 2.4em;
+        font-size: 2em;
       }
     }
   }
@@ -710,8 +771,8 @@ header {
 .newsletter {
   display: flex;
   position: relative;
-  height: 750px;
-  @include background-img(url('img/big_pic_08.jpg'));
+  height: 594px;
+  @include background-img(url('img/1500_big_pic_08.jpg'));
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
@@ -725,12 +786,14 @@ header {
     color: $grey-light;
   }
   p {
-    color: $white;
-    margin-bottom: 60px;
+    color: $grey-light;
+    margin-bottom: 140px;
+    margin-left: -7%;
     font-size: 1.3em;
+    width: 200px;
   }
   input[type=email] {
-    width: 450px;
+    width: 378px;
     height: 50px;
     background-color: rgba(0,0,0,0.4);
     border: 2px solid $white;
@@ -740,8 +803,8 @@ header {
     box-sizing: border-box;
   }
   input[type=submit] {
-    width: 250px;
-    height: 54px;
+    width: 156px;
+    height: 50px;
     letter-spacing: 3px;
     font-size: 1em;
     background-color: rgba(255,255,255,0.7);
@@ -773,22 +836,25 @@ header {
 footer {
   position: relative;
   display: flex;
-  height: 800px;
-  @include background-img(url('img/big_pic_09.jpg'));
+  height: 754px;
+  @include background-img(url('img/1500_big_pic_09.jpg'));
+  h1 {
+    margin-top: 58px;
+  }
   div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 300px;
+    margin-top: 250px;
+    margin-left: 8%;
     ul {
       display: flex;
       li {
         list-style: none;
-        margin: 23px 23px 40px 23px;
+        margin: 23px 3px 40px 3px;
         img {
-          width: 60px;
-          box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+          width: 102px;
         }
       }
     }
