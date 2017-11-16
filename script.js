@@ -11,7 +11,7 @@ var useBambooSquare = document.querySelector('.use-of-bamboo-straws .photo-conta
 var useBambooCards = document.querySelectorAll('.use-of-bamboo-straws .photo-container-1 img');
 var useBambooSquare2 = document.querySelector('.use-of-bamboo-straws .photo-container-2 div');
 var useBambooCards2 = document.querySelectorAll('.use-of-bamboo-straws .photo-container-2 img');
-var aboutSquare = document.querySelector('.about-us div');
+var aboutSquare = document.querySelector('.about-us .white-container div');
 var aboutH2 = document.querySelectorAll('.about-us ul li h2');
 var aboutImg = document.querySelectorAll('.about-us ul li img');
 var aboutP = document.querySelectorAll('.about-us ul li p');
@@ -92,7 +92,7 @@ window.addEventListener('scroll', function() {
         setTimeout(showOnScrollElt, 300, aboutSquare, documentElt.scrollTop, 5240, 'fadeIn');
     }
 
-    if(documentElt.scrollTop >= 5640) {
+    if(documentElt.scrollTop >= 5240) {
         for(var i = 0; i < aboutP.length; i++ ) {
             var addTime = i * 150;
             setTimeout(showOnScrollElt, 100 + addTime, aboutImg[i], documentElt.scrollTop, 4780, 'fadeIn');
@@ -120,18 +120,7 @@ window.addEventListener('scroll', function() {
         }
         setTimeout(showOnScrollElt, 600, footerImg, documentElt.scrollTop, 7840, 'fadeIn');
     }
-
-
-
-
-
-    console.log(documentElt.scrollTop);
 });
-
-
-
-
-
 
 function showOnScrollElt(elt, scrollPosition, startAnimPosition, anim) {
     if(scrollPosition >= startAnimPosition ) {
