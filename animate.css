@@ -12,6 +12,9 @@
   animation-duration: 0.75s;
   animation-fill-mode: both;
 }
+.animation.titleAnime {
+  animation-duration: 3s;
+}
 
 .animated.infinite {
   animation-iteration-count: infinite;
@@ -29,10 +32,12 @@
 }
 
 @keyframes titleAnime {
-   from {
-   line-height: 10em;
+   0% {
+     transform: scaleY(0);
+     line-height: 10em;
   }
-  to {
+  100% {
+    transform: scaleY(1);
     line-height: 1em;
   }
 }

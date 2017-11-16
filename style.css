@@ -37,7 +37,7 @@ h1 {
   margin-left: 15%;
   height: 250px;
   overflow: hidden;
-  transform-origin: 0% 50%; }
+  transform-origin: 0% 80%; }
 @media (min-width: 321px) and (max-width: 750px) {
   h1 {
     font-size: 2.2em;
@@ -98,7 +98,7 @@ header {
   header h1 {
     opacity: 0;
     margin: 0 auto 350px auto;
-    line-height: 5em; }
+    line-height: 5em !important; }
     header h1 img {
       width: 198px; }
 @media (min-width: 321px) and (max-width: 750px) {
@@ -209,24 +209,13 @@ header {
         transition: .8s ease-out; }
       .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) span {
         opacity: 0;
-        transform: translate3d(-1000px, 0, 0);
-        transition: .2s ease-out; }
-      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterLeftIn:after {
-        transform: translate3d(0, 0, 0) !important;
-      }
-      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut span {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-      }
-      .the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut:after {
-        transform: translate3d(700px, 0, 0) !important;
-      }
+        transition: .3s ease-out; }
 @media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
     font-size: 0.8em; } }
 
       .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) .afterLeftIn:after {
-        transform: translate3d(0, 0, 0) !important; }
+        transform: translate3d(-1000px, 0, 0); }
       .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) .afterLeftIn span {
         opacity: 1; }
     .the-bamboo-straws .the-bamboo-title-container .white-square {
@@ -241,9 +230,8 @@ header {
       justify-content: center;
       font-size: 2em;
       opacity: 1;
-      transform: scale(0);
-      transform-origin: 50% 100%;
-      z-index: 400; }
+      z-index: 400;
+      transform: scale(0); }
 @media (min-width: 321px) and (max-width: 750px) {
   .the-bamboo-straws .the-bamboo-title-container .white-square {
     height: 115px;
@@ -307,6 +295,16 @@ header {
   .the-bamboo-straws .card-container {
     margin-bottom: 0; } }
 
+.the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterLeftIn:after {
+  transform: translate3d(0, 0, 0) !important; }
+
+.the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut span {
+  transform: translate3d(0, 0, 0);
+  opacity: 1; }
+
+.the-bamboo-straws .the-bamboo-title-container p:nth-child(2).afterRightOut:after {
+  transform: translate3d(700px, 0, 0) !important; }
+
 .purchase {
   height: 956px;
   width: 100%;
@@ -337,7 +335,8 @@ header {
     background-color: white;
     box-sizing: border-box;
     padding: 45px 100px;
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    transform: scale(0); }
 @media (min-width: 321px) and (max-width: 750px) {
   .the-change .the-change-title-container p {
     font-size: 0.8em;
@@ -424,18 +423,17 @@ header {
 
 .use-of-bamboo-straws {
   width: 100%; }
-  .use-of-bamboo-straws h1 {
+  .use-of-bamboo-straws .title-container {
     height: 594px;
     margin-left: 0 !important;
-    margin-bottom: 30px;
-    padding: 70px 0 0 211px;
+    margin-bottom: -23px;
+    padding-top: 58px;
     background: url("img/1500_big_pic_05.jpg") center center no-repeat;
     background-size: cover; }
 @media (min-width: 321px) and (max-width: 750px) {
-  .use-of-bamboo-straws h1 {
+  .use-of-bamboo-straws .title-container {
     background: url("img/smartphone/m_big_pic_05.jpg") center center no-repeat;
-    background-size: cover;
-    padding: 10px 0 0 10%; } }
+    background-size: cover; } }
 
   .use-of-bamboo-straws .photo-container-1, .use-of-bamboo-straws .photo-container-2 {
     display: flex;
@@ -445,7 +443,8 @@ header {
     align-items: center;
     justify-content: center;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    overflow: hidden; }
     .use-of-bamboo-straws .photo-container-1 div, .use-of-bamboo-straws .photo-container-2 div {
       background-color: white;
       box-sizing: border-box; }
@@ -457,33 +456,39 @@ header {
     .use-of-bamboo-straws .photo-container-1 img, .use-of-bamboo-straws .photo-container-2 img {
       height: auto;
       margin-left: 6px;
-      margin-right: 6px; }
-  .use-of-bamboo-straws .photo-container-1 div:first-child {
-    position: absolute;
-    height: 228px;
-    width: 228px;
-    top: -20%;
-    left: 26px;
-    padding: 30px 50px 0 50px; }
-  .use-of-bamboo-straws .photo-container-1 img:nth-child(2) {
-    margin-top: 102px;
-    width: 270px;
-    height: 258px; }
-  .use-of-bamboo-straws .photo-container-1 img:nth-child(3) {
-    margin-top: -10px;
-    width: 185px;
-    height: 371px; }
-  .use-of-bamboo-straws .photo-container-1 img:last-child {
-    margin-top: 34px;
-    width: 224px;
-    height: 327px; }
+      margin-right: 6px;
+      transform: translate3d(0, -900px, 0); }
+  .use-of-bamboo-straws .photo-container-1 {
+    padding-top: 100px; }
+    .use-of-bamboo-straws .photo-container-1 div:first-child {
+      position: absolute;
+      height: 228px;
+      width: 228px;
+      top: 0;
+      left: 26px;
+      padding: 30px 50px 0 50px;
+      transform: scale(0);
+      z-index: 400; }
+    .use-of-bamboo-straws .photo-container-1 img:nth-child(2) {
+      margin-top: 102px;
+      width: 270px;
+      height: 258px; }
+    .use-of-bamboo-straws .photo-container-1 img:nth-child(3) {
+      margin-top: -10px;
+      width: 185px;
+      height: 371px; }
+    .use-of-bamboo-straws .photo-container-1 img:last-child {
+      margin-top: 34px;
+      width: 224px;
+      height: 327px; }
   .use-of-bamboo-straws .photo-container-2 {
     margin: 0 auto;
     flex-wrap: wrap; }
     .use-of-bamboo-straws .photo-container-2 div {
       height: 157px;
       width: 100%;
-      padding: 25px 50px 0 50px; }
+      padding: 25px 50px 0 50px;
+      opacity: 0; }
     .use-of-bamboo-straws .photo-container-2 img {
       width: 223px;
       height: 223px; }
@@ -560,7 +565,9 @@ header {
     right: 25%;
     background-color: white;
     padding: 50px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    transform-origin: 100% 50%;
+    opacity: 0; }
     .about-us div p {
       margin: 0 !important;
       color: #7B8084;
@@ -587,26 +594,32 @@ header {
   .about-us li {
     display: flex;
     flex-direction: column;
-    list-style: none; }
+    list-style: none;
+    overflow: hidden; }
     .about-us li img {
       width: 63px;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      opacity: 0; }
 @media (min-width: 321px) and (max-width: 750px) {
   .about-us li img {
     position: relative;
     width: 40px; } }
 
     .about-us li h2 {
-      width: 0;
+      position: relative;
+      width: 180px;
       color: white;
-      letter-spacing: 5px; }
+      letter-spacing: 5px;
+      opacity: 0;
+      margin-bottom: 15px; }
 @media (min-width: 321px) and (max-width: 750px) {
   .about-us li h2 {
     font-size: 1.2em; } }
 
     .about-us li p {
       margin-left: 0 !important;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      opacity: 0; }
 @media (min-width: 321px) and (max-width: 750px) {
   .about-us li p {
     font-size: 0.8em; } }
@@ -647,9 +660,11 @@ header {
   .contact-us h1 {
     margin-top: 58px;
     margin-bottom: 60px;
-    color: #7B8084; }
+    color: #7B8084;
+    height: 60px !important; }
   .contact-us ul {
-    margin-left: 23%; }
+    margin-left: 23%;
+    opacity: 0; }
     .contact-us ul li {
       list-style: none;
       font-size: 1.2em; }
@@ -694,7 +709,10 @@ header {
     top: 70px;
     left: 210Px;
     margin: 0;
-    color: #7B8084; }
+    color: #7B8084;
+    height: 60px !important; }
+  .newsletter p, .newsletter form {
+    opacity: 0; }
   .newsletter p {
     color: #7B8084;
     margin-bottom: 140px;
@@ -753,12 +771,14 @@ footer {
     footer div ul {
       display: flex; }
       footer div ul li {
+        opacity: 0;
         list-style: none;
         margin: 23px 3px 40px 3px; }
         footer div ul li img {
           width: 102px; }
     footer div .logo {
-      width: 120px; }
+      width: 120px;
+      opacity: 0; }
   footer p {
     position: absolute;
     bottom: 15px;
