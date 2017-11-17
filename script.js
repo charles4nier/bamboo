@@ -122,7 +122,15 @@ window.addEventListener('scroll', function() {
     }
 });
 
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
+
 function showOnScrollElt(elt, scrollPosition, startAnimPosition, anim) {
+
     if(scrollPosition >= startAnimPosition ) {
         elt.classList.add('animated', anim);
     }
