@@ -50,9 +50,12 @@ h1 {
 
 @media (min-width: 321px) and (max-width: 500px) {
   h1 {
+    display: flex;
     font-size: 2em;
     letter-spacing: 3px;
-    margin-top: 10px; } }
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center; } }
 
 .card-container {
   display: flex;
@@ -273,8 +276,6 @@ header {
     background-size: cover;
     margin-bottom: 0; } }
 
-    .the-bamboo-straws .the-bamboo-title-container h1 {
-      margin-top: 58px; }
     .the-bamboo-straws .the-bamboo-title-container h1, .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
       margin-left: 14%; }
 @media (min-width: 1200px) and (max-width: 1500px) {
@@ -284,6 +285,13 @@ header {
 @media (min-width: 750px) and (max-width: 949px) {
   .the-bamboo-straws .the-bamboo-title-container h1, .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
     margin-left: 45px; } }
+
+    .the-bamboo-straws .the-bamboo-title-container h1 {
+      margin-top: 58px; }
+@media (min-width: 321px) and (max-width: 500px) {
+  .the-bamboo-straws .the-bamboo-title-container h1 {
+    margin-left: auto;
+    margin-right: auto; } }
 
     .the-bamboo-straws .the-bamboo-title-container p:nth-child(2) {
       position: relative;
@@ -507,6 +515,14 @@ header {
     margin-top: 32px;
     margin-left: 45px; } }
 
+@media (min-width: 321px) and (max-width: 500px) {
+  .the-change .the-change-title-container h1 {
+    display: flex;
+    width: 250px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto; } }
+
   .the-change .the-change-title-container p {
     position: absolute;
     height: 178px;
@@ -637,7 +653,7 @@ header {
     background: url("img/750_big_pic_05.jpg") center center no-repeat;
     background-size: cover; } }
 
-@media (min-width: 501px) and (max-width: 749px) {
+@media (min-width: 321px) and (max-width: 749px) {
   .use-of-bamboo-straws .title-container {
     background: url("img/500_big_pic_05.jpg") center center no-repeat;
     background-size: cover; } }
@@ -651,6 +667,12 @@ header {
     padding-top: 32px; }
     .use-of-bamboo-straws .title-container h1 {
       margin-left: 45px; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  .use-of-bamboo-straws .title-container {
+    padding-top: 32px; }
+    .use-of-bamboo-straws .title-container h1 {
+      margin-left: 0; } }
 
   .use-of-bamboo-straws .photo-container-1, .use-of-bamboo-straws .photo-container-2 {
     display: flex;
@@ -724,7 +746,7 @@ header {
     .use-of-bamboo-straws .photo-container-1 div:first-child p {
       font-size: 1.4em; } }
 
-@media (min-width: 321px) and (max-width: 749px) {
+@media (min-width: 501px) and (max-width: 749px) {
   .use-of-bamboo-straws .photo-container-1 div:first-child {
     width: 244px !important;
     margin: 5px !important;
@@ -733,6 +755,13 @@ header {
     padding: 40px 30px 0 30px; }
     .use-of-bamboo-straws .photo-container-1 div:first-child p {
       font-size: 1em; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  .use-of-bamboo-straws .photo-container-1 div:first-child {
+    top: 0;
+    left: 0;
+    height: auto;
+    padding: 20px 30px 20px 30px; } }
 
 @media (min-width: 750px) and (max-width: 949px) {
   .use-of-bamboo-straws .photo-container-1 div:first-child {
@@ -857,6 +886,10 @@ header {
   .about-us h1 {
     margin-bottom: 10px; } }
 
+@media (min-width: 321px) and (max-width: 500px) {
+  .about-us h1 {
+    margin-left: 0; } }
+
   .about-us .white-container {
     position: absolute;
     width: 2px;
@@ -918,11 +951,20 @@ header {
   .about-us ul {
     margin-left: 45px; } }
 
+@media (min-width: 321px) and (max-width: 500px) {
+  .about-us ul {
+    margin-left: auto;
+    margin-right: auto; } }
+
   .about-us li {
     display: flex;
     flex-direction: column;
     list-style: none;
     overflow: hidden; }
+@media (min-width: 321px) and (max-width: 500px) {
+  .about-us li {
+    align-items: center; } }
+
     .about-us li img {
       width: 63px;
       margin-bottom: 10px;
@@ -971,10 +1013,22 @@ header {
   .about-us li p {
     font-size: 0.8em; } }
 
-@media (min-width: 321px) and (max-width: 949px) {
+@media (min-width: 321px) and (max-width: 500px) {
+  .about-us li p {
+    width: 350px !important; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  .about-us li:first-child br {
+    content: ' '; } }
+
+@media (min-width: 501px) and (max-width: 949px) {
   .about-us li:first-child span {
     margin-bottom: 5px;
     margin-left: 12px; } }
+
+@media (min-width: 321px) and (max-width: 749px) {
+  .about-us li:first-child span {
+    margin-bottom: 0; } }
 
     .about-us li:nth-child(2) img {
       width: 48px; }
@@ -1026,7 +1080,7 @@ header {
     background-size: cover;
     height: 500px; } }
 
-@media (min-width: 501px) and (max-width: 749px) {
+@media (min-width: 321px) and (max-width: 749px) {
   .contact-us {
     background: url("img/500_big_pic_07.jpg") center center no-repeat;
     background-size: cover; } }
@@ -1045,6 +1099,11 @@ header {
     margin-left: 45px;
     margin-top: 32px; } }
 
+@media (min-width: 321px) and (max-width: 500px) {
+  .contact-us h1 {
+    margin-left: 0;
+    margin-top: 32px; } }
+
   .contact-us ul {
     margin-left: 23%;
     opacity: 0; }
@@ -1052,6 +1111,13 @@ header {
   .contact-us ul {
     margin-left: auto;
     margin-right: auto; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  .contact-us ul {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
 
     .contact-us ul li {
       list-style: none;
@@ -1064,6 +1130,12 @@ header {
       .contact-us ul li:last-child {
         margin-top: 15px;
         font-size: 2em; }
+@media (min-width: 321px) and (max-width: 500px) {
+  .contact-us ul li {
+    font-size: 1em;
+    margin-bottom: 5px; }
+    .contact-us ul li:last-child {
+      font-size: 1.2em; } }
 
 .newsletter {
   display: flex;
@@ -1091,7 +1163,7 @@ header {
     background: url("img/750_big_pic_08.jpg") center center no-repeat;
     background-size: cover; } }
 
-@media (min-width: 501px) and (max-width: 749px) {
+@media (min-width: 321px) and (max-width: 749px) {
   .newsletter {
     background: url("img/500_big_pic_08.jpg") center center no-repeat;
     background-size: cover; } }
@@ -1114,16 +1186,26 @@ header {
 @media (min-width: 501px) and (max-width: 949px) {
   .newsletter h1 {
     width: 518px;
-    top: 30px;
+    top: 32px;
     left: 45px; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  .newsletter h1 {
+    top: 32px;
+    width: 290px;
+    left: calc(50% - 145px); } }
 
   .newsletter p, .newsletter form {
     opacity: 0; }
-@media (min-width: 501px) and (max-width: 949px) {
+@media (min-width: 321px) and (max-width: 949px) {
   .newsletter p, .newsletter form {
     display: flex;
     flex-direction: column;
-    width: 80%; } }
+    width: 80%; }
+    .newsletter p input, .newsletter form input {
+      width: 100% !important; }
+    .newsletter p input[type=email], .newsletter form input[type=email] {
+      margin-bottom: 15px; } }
 
   .newsletter p {
     color: #7B8084;
@@ -1131,9 +1213,11 @@ header {
     margin-left: -7%;
     font-size: 1.3em;
     width: 200px; }
-@media (min-width: 501px) and (max-width: 949px) {
+@media (min-width: 321px) and (max-width: 949px) {
   .newsletter p {
-    display: none; } }
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px; } }
 
   .newsletter input[type=email] {
     width: 378px;
@@ -1187,7 +1271,7 @@ footer {
     background: url("img/750_big_pic_09.jpg") center center no-repeat;
     background-size: cover; } }
 
-@media (min-width: 501px) and (max-width: 749px) {
+@media (min-width: 321px) and (max-width: 749px) {
   footer {
     background: url("img/500_big_pic_09.jpg") center center no-repeat;
     background-size: cover; } }
@@ -1196,7 +1280,7 @@ footer {
   footer {
     height: 572px; } }
 
-@media (min-width: 501px) and (max-width: 949px) {
+@media (min-width: 321px) and (max-width: 949px) {
   footer {
     flex-direction: column;
     align-items: center;
@@ -1209,6 +1293,14 @@ footer {
     position: absolute;
     top: 30px;
     left: 45px;
+    margin: 0; } }
+
+@media (min-width: 321px) and (max-width: 500px) {
+  footer h1 {
+    width: 350px;
+    left: calc(50% - 175px);
+    position: absolute;
+    top: 32px;
     margin: 0; } }
 
   footer div {
