@@ -5,6 +5,8 @@ var whiteSquareHeaderElt = document.getElementById('white-title-header-elt');
 var bambooStrawsWhiteContainer = document.getElementById('the-bamboo-straws-white-square');
 var bambooPara = document.querySelector('.the-bamboo-title-container p:nth-child(2)');
 var bambooCards = document.querySelectorAll('.the-bamboo-straws .card-container .card');
+var purchaseBorder = document.querySelectorAll('.purchase a .border-button');
+var purchaseBackground = document.querySelector('.purchase a span:last-child');
 var changeWhiteSquare = document.querySelector('.the-change .the-change-title-container p');
 var changeCards = document.querySelectorAll('.the-change .card-container .card');
 var useBambooSquare = document.querySelector('.use-of-bamboo-straws .photo-container-1 div');
@@ -25,6 +27,7 @@ var documentElt = document.documentElement;
 
 window.addEventListener("load", function () {
     headerElt.classList.add('animated', 'fadeIn');
+    purchaseBackground.style.opacity = 0;
     setTimeout(function() {
         titleHeaderElt.classList.add('animated', 'fadeIn');
     }, 270);
@@ -54,6 +57,17 @@ window.addEventListener('scroll', function() {
             var addTime = i * 150;
             setTimeout(showOnScrollElt, addTime, bambooCards[i], documentElt.scrollTop, 980, 'fadeInUp');
         }
+    }
+
+    if(documentElt.scrollTop >= 1650) {
+        showOnScrollElt(purchaseBorder[1], documentElt.scrollTop, 1050, 'fadeInDown');
+        showOnScrollElt(purchaseBorder[3], documentElt.scrollTop, 1050, 'fadeInUp');
+        setTimeout(showOnScrollElt, 200, purchaseBorder[0], documentElt.scrollTop, 1050, 'fadeInRight');
+        setTimeout(showOnScrollElt, 200, purchaseBorder[2], documentElt.scrollTop, 1050, 'fadeInLeft');
+        setTimeout(function() {
+            purchaseBackground.style.opacity = 1;
+        }, 600);
+
     }
 
     showOnScrollElt(otherTitles[2], documentElt.scrollTop, 2500, 'titleAnime');
