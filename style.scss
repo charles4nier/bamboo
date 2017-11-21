@@ -53,29 +53,33 @@ html, body {
 h1 {
   font-family: GothamThin;
   color: $white;
-  font-size: 3.5em;
+  font-size: 4em;
   line-height: 30em;
   letter-spacing: 0.2em;
   margin-left: 15%;
   height: 250px;
   overflow: hidden;
   transform-origin: 0% 80%;
-  @include media(">desktop", "<=desktop-large") {
+  @include media(">tablet", "<=desktop-large") {
     margin-left: 105px;
   }
   @include media(">phone", "<=tablet") {
-    font-size: 2.2em;
+    font-size: 2.6em;
     letter-spacing: 3px;
     margin-top: 10px;
   }
   @include media(">320px", "<=phone") {
     display: flex;
-    font-size: 2em;
+    font-size: 2.6em;
     letter-spacing: 3px;
     margin-top: 10px;
     text-align: center;
     justify-content: center;
   }
+}
+
+.shadow {
+  box-shadow: 0 0 6px 2px rgba(0,0,0,0.2);
 }
 
 .card-container {
@@ -98,7 +102,7 @@ h1 {
   position: absolute;
   background-color: $white;
   z-index: 2;
-  transition: background-color 0.2s;
+  transition: background-color 0.1s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   &:first-child, &:nth-child(2) {
     top: 0;
@@ -187,10 +191,31 @@ header {
     img {
       width: 198px;
     }
+    @include media(">tablet-large", "<=desktop") {
+      margin-bottom: 80%;
+    }
+
     @include media(">320px", "<=tablet-large") {
       position: absolute;
-      top: 30px;
+      top: 150px;
       left: calc(50% - 99px);
+      font-size: 2em;
+    }
+    @include media(">phone", "<=tablet") {
+      top: 270px;
+      height:auto;
+      left: calc(50% - 120px);
+      img {
+        width: 240px;
+      }
+    }
+    @include media(">tablet", "<=tablet-large") {
+      top: 260px;
+      height:auto;
+      left: calc(50% - 150px);
+      img {
+        width: 300px;
+      }
     }
   }
   .white-container {
@@ -251,6 +276,9 @@ header {
             font-size: 0.8em;
             padding-left: 20px;
             width: 80%;
+            br {
+              content: ' ';
+            }
           }
         }
         @include media(">phone", "<=tablet") {
@@ -306,6 +334,7 @@ header {
     }
     @include media(">320px", "<=tablet") {
       @include background-img(url('img/500_big_pic_02.jpg'));
+      height: 500px;
       margin-bottom: 0;
     }
     h1, p:nth-child(2) {
@@ -326,14 +355,18 @@ header {
     }
     p:nth-child(2) {
       position: relative;
-      width: 350px;
+      width: 440px;
       font-family: ProximaNovaBold;
-      font-size: 0.9em;
+      font-size: 1.4em;
       margin-bottom: 70px;
       color: $white;
       opacity: 1;
       overflow: hidden;
+      @include media(">tablet-large", "<=desktop") {
+        font-size: 1em;
+      }
       @include media (">320px", "<=tablet-large") {
+        width: 580px;
         margin-bottom: -75px;
         color: $grey-light;
         font-size: 1.2em;
@@ -349,6 +382,9 @@ header {
       }
       @include media (">320px", "<phone") {
         font-size: 1em;
+      }
+      @include media (">tablet", "<=tablet-large") {
+        width: 380px;
       }
       &:after {
         position: absolute;
@@ -462,6 +498,7 @@ header {
         border-top: 1px solid $white;
         @include media(">320px", "<=phone") {
           font-size: 0.9em;
+          margin-left: 8px;
         }
       }
     }
@@ -508,6 +545,7 @@ header {
     margin: 32px 0;
   }
   a {
+    box-sizing: border-box;
     position: relative;
     display: inline-block;
     width: 640px;
@@ -516,10 +554,18 @@ header {
     cursor: pointer;
     letter-spacing: 8px;
     overflow: hidden;
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
-    transition: .2s all;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+    border-color: $white;
+    border-width: 0;
+    border-style: solid;
+    transition: .3s opacity, .1s border-width;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     margin-top: 100px;
+    @include media(">320px", "<=tablet") {
+      width: 340px;
+      font-size: 1em;
+      letter-spacing: 2px;
+    }
     span {
       &:nth-child(2) {
         width: 3px;
@@ -533,9 +579,10 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.3);
-        color: $white;
-        transition: opacity .8s, transform .3s;
+        background-color: rgba(255,255,255,0.8);
+        border: 2px solid rgba(255,255,255,0);
+        color: $grey-light;
+        transition: opacity .8s, transform .5s;
         transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
         transform: translate3d(0, 0, 0);
         opacity: 1;
@@ -543,7 +590,7 @@ header {
     }
     &:hover {
       color: $grey-light;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(0,0,0,0.5);
     }
     &::after {
       content: attr(data-text);
@@ -556,19 +603,19 @@ header {
       top: 0;
       left: 0;
       opacity: 0;
-      color: $grey-light;
+      color: $white;
       -webkit-transform: translate3d(0, 25%, 0);
       transform: translate3d(0, 25%, 0);
-      transition: .3s all;
+      transition: .5s all;
       transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     }
   }
 }
 
 .purchase a:hover {
-  box-shadow: 0 0 6px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
+  border-width: 2px;
 }
-
 
 .purchase a:hover::after {
   opacity: 1;
@@ -584,6 +631,8 @@ header {
 .purchase a:hover .border-button {
   background-color: rgba(0,0,0,0);
 }
+
+
 
 .the-change {
   .the-change-title-container {
@@ -603,8 +652,13 @@ header {
     @include media(">320px", "<=tablet") {
       @include background-img(url('img/500_big_pic_04.jpg'));
     }
-    @include media(">phone", "<=tablet-large") {
+    @include media(">320px", "<=tablet-large") {
       height: 500px;
+    }
+    .the-change-title-container {
+      @include media(">320px", "<=phone") {
+        margin-bottom: 180px;
+      }
     }
     h1 {
       margin-top: 58px;
@@ -633,7 +687,7 @@ header {
       transform: scale(0);
       @include media(">320px", "<=tablet-large") {
         width: 90%;
-        height: 80px;
+        height: 130px;
         left: 5%;
         padding: 15px 20px;
         .break-none {
@@ -643,6 +697,7 @@ header {
       @include media(">320px", "<=tablet-large") {
         bottom: -130px;
         height: auto;
+        width: 90%;
       }
       @include media(">tablet", "<=tablet-large") {
         font-size:1.3em;
@@ -696,7 +751,9 @@ header {
     }
     @include media(">320px", "<=tablet-large") {
       display: flex;
-      width: 100%;
+      width: 88%;
+      margin-left: auto;
+      margin-right: auto;
       height: auto;
       background-color: $white;
       flex-direction: column;
@@ -761,6 +818,7 @@ header {
     }
     @include media(">320px", "<=tablet") {
       @include background-img(url('img/500_big_pic_05.jpg'));
+      height: 500px;
     }
     @include media(">tablet-large", "<=desktop"){
       height: 558px;
@@ -994,7 +1052,7 @@ header {
     overflow-x: hidden;
   }
   h1 {
-    height: 60px;
+    height: 80px;
     margin-bottom: 100px;
     @include media (">320px", "<=tablet-large") {
       margin-top: 30px;
@@ -1061,11 +1119,17 @@ header {
     }
   }
   ul{
-    margin-left: 22%;
+    margin-left: 16%;
+    @include media (">tablet-large", "<=desktop") {
+      margin-left: 10%;
+    }
     @include media (">phone", "<=tablet-large") {
       margin-left: 45px;
     }
     @include media (">320px", "<=phone") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-left: auto;
       margin-right: auto;
     }
@@ -1076,7 +1140,7 @@ header {
     list-style: none;
     overflow: hidden;
     @include media (">320px", "<=phone") {
-      align-items: center;
+      align-items: flex-start;
     }
     img {
       width: 63px;
@@ -1125,14 +1189,14 @@ header {
       }
       @include media (">320px", "<=phone") {
         width: 350px !important;
+        @include media (">320px", "<=phone") {
+          br {
+            content: ' ';
+          }
+        }
       }
     }
     &:first-child {
-      @include media (">320px", "<=phone") {
-        br {
-          content: ' ';
-        }
-      }
       span {
         @include media (">phone", "<=tablet-large") {
           margin-bottom: 5px;
@@ -1140,6 +1204,13 @@ header {
         }
         @include media (">320px", "<=tablet") {
           margin-bottom: 0;
+        }
+      }
+    }
+    &:nth-child(1), &:nth-child(2){
+      @include media (">phone", "<=tablet-large") {
+        p {
+          width: 60%;
         }
       }
     }
@@ -1154,7 +1225,7 @@ header {
     &:last-child {
       p {
         &:nth-child(2) {
-          width: 420px;
+          width: 610px;
           br {
             content: ' ';
           }
@@ -1198,6 +1269,7 @@ header {
   }
   @include media(">320px", "<=tablet") {
     @include background-img(url('img/500_big_pic_07.jpg'));
+    height: 500px;
   }
   @include media(">tablet-large", "<=desktop"){
     height: 558px;
@@ -1206,7 +1278,7 @@ header {
     margin-top: 58px;
     margin-bottom: 60px;
     color: $grey-light;
-    height: 60px !important;
+    height: 80px !important;
     @include media (">phone", "<=tablet-large") {
       margin-left: 45px;
       margin-top: 32px;
@@ -1214,6 +1286,7 @@ header {
     @include media (">320px", "<=phone") {
       margin-left: 0;
       margin-top: 32px;
+      margin-bottom: 0;
     }
   }
   ul {
@@ -1244,7 +1317,7 @@ header {
         font-size: 2em;
       }
       @include media (">320px", "<=phone") {
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 5px;
         &:last-child {
           font-size: 1.2em;
@@ -1275,6 +1348,7 @@ header {
   }
   @include media(">320px", "<=tablet") {
     @include background-img(url('img/500_big_pic_08.jpg'));
+    height: 500px;
   }
   @include media (">phone", "<=tablet-large") {
     justify-content: flex-end;
@@ -1285,10 +1359,10 @@ header {
   h1 {
     position: absolute;
     top: 70px;
-    left: 210Px;
+    left: 15%;
     margin: 0;
     color: $grey-light;
-    height: 60px !important;
+    height: 80px !important;
     @include media (">phone", "<=tablet-large") {
       width: 518px;
       top: 32px;
@@ -1296,8 +1370,8 @@ header {
     }
     @include media (">320px", "<=phone") {
       top: 32px;
-      width: 290px;
-      left: calc(50% - 145px);
+      width: 330px;
+      left: calc(50% - 165px);
     }
   }
   p, form {
@@ -1323,9 +1397,19 @@ header {
     @include media (">320px", "<=tablet-large") {
       margin-left: auto;
       margin-right: auto;
+      margin-top: 105px;
+      margin-bottom: 70px;
       width: 280px;
     }
-
+  }
+  form {
+    display: flex;
+    height: 60px;
+    @include media (">320px", "<=tablet-large") {
+      margin-top: 60px;
+      width: 250px;
+      height: 100px;
+    }
   }
   input[type=email] {
     width: 378px;
@@ -1336,7 +1420,7 @@ header {
     color: $white;
     padding: 0 35px;
     box-sizing: border-box;
-    @include media (">phone", "<=tablet-large") {
+    @include media (">320px", "<=tablet-large") {
       margin-bottom: 15px;
       width: 100%;
       font-size: 1.2em;
@@ -1344,20 +1428,100 @@ header {
     }
   }
   input[type=submit] {
+    display: none;
+  }
+  label {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
     width: 156px;
     height: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+    border-color: $white;
+    border-width: 0;
+    border-style: solid;
+    transition: .3s opacity, .1s border-width;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    margin-left: 15px;
     letter-spacing: 3px;
     font-size: 1em;
-    background-color: rgba(255,255,255,0.7);
-    text-transform: uppercase;
-    border: none;
     font-family: ProximaNovaBold;
-    @include media (">phone", "<=tablet-large") {
+    @include media (">320px", "<=tablet-large") {
+      height: 80px;
+      padding-left: 0px;
+      padding-right: 0px;
       width: 100%;
-      letter-spacing: 12px;
-      font-size: 1.2em;
+      margin-left: 0;
+    }
+    span {
+      &:nth-child(2) {
+        width: 3px;
+      }
+      &:last-child {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.8);
+        border: 2px solid rgba(255,255,255,0);
+        color: $grey-light;
+        transition: opacity .8s, transform .5s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        font-size: 0.8em;
+      }
+    }
+    &:hover {
+      color: $grey-light;
+      background-color: rgba(0,0,0,0.5);
+    }
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      color: $white;
+      -webkit-transform: translate3d(0, 25%, 0);
+      transform: translate3d(0, 25%, 0);
+      transition: .5s all;
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      font-size: 0.8em;
     }
   }
+}
+
+.newsletter form label:hover {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
+  border-width: 2px;
+}
+
+.newsletter form label:hover::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.newsletter form label:hover span:last-child{
+  opacity: 0;
+  -webkit-transform: translate3d(0, -1000px, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.newsletter form label:hover .border-button {
+  background-color: rgba(0,0,0,0);
 }
 
 footer {
@@ -1380,6 +1544,7 @@ footer {
   }
   @include media(">320px", "<=tablet") {
     @include background-img(url('img/500_big_pic_09.jpg'));
+    height: 512px;
   }
   @include media(">tablet-large", "<=desktop"){
     height: 572px;
@@ -1392,7 +1557,10 @@ footer {
   h1 {
     position: absolute;
     top: 58px;
-    left: 105px;
+    left: 15%;
+    margin-left: 0;
+    height: 80px !important;
+    overflow: hidden;
     @include media(">phone", "<=tablet-large") {
       position: absolute;
       top: 30px;
@@ -1414,7 +1582,7 @@ footer {
     flex-direction: column;
     margin-top: 150px;
     margin-left: 15%;
-    @include media(">phone", "<=tablet-large") {
+    @include media(">320px", "<=tablet-large") {
       margin-left: 0;
     }
     ul {
@@ -1443,15 +1611,89 @@ footer {
     }
   }
   a {
-    display: flex;
-    position: absolute;
-    width: 800px;
-    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 780px;
+    height: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    bottom: 20px;
-    border: 1px solid red;
-    text-decoration: none;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+    border-color: $white;
+    border-width: 0;
+    border-style: solid;
+    transition: .3s opacity, .1s border-width;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    margin-top: 200px;
+    letter-spacing: 1px;
+    @include media(">320px", "<=tablet") {
+      width: 330px;
+    }
+    span {
+      &:nth-child(2) {
+        width: 3px;
+      }
+      &:last-child {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.8);
+        border: 2px solid rgba(255,255,255,0);
+        color: $grey-light;
+        transition: opacity .8s, transform .5s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        font-size: 0.8em;
+      }
+    }
+    &:hover {
+      color: $grey-light;
+      background-color: rgba(0,0,0,0.5);
+    }
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      color: $white;
+      -webkit-transform: translate3d(0, 25%, 0);
+      transform: translate3d(0, 25%, 0);
+      transition: .5s all;
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      font-size: 0.8em;
+    }
   }
+}
+
+footer a:hover {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
+  border-width: 2px;
+}
+
+footer a:hover::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+footer a:hover span:last-child{
+  opacity: 0;
+  -webkit-transform: translate3d(0, -1000px, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+footer a:hover .border-button {
+  background-color: rgba(0,0,0,0);
 }
