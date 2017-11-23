@@ -38,6 +38,9 @@ window.addEventListener("load", function () {
     setTimeout(function() {
         titleHeaderElt.classList.add('animated', 'fadeIn');
     }, 270);
+    if (window.matchMedia("(max-width: 750px)").matches) {
+        footerBackground.textContent = "Conception: SUPERJOLI.COM";
+    }
 });
 
 window.addEventListener('scroll', function() {

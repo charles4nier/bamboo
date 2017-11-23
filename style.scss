@@ -1400,7 +1400,7 @@ header {
     color: $grey-light;
     height: 80px !important;
     @include media (">phone", "<=tablet-large") {
-      width: 518px;
+      width: 628px;
       top: 32px;
       left: 45px;
     }
@@ -1696,6 +1696,9 @@ footer {
       margin-top: 30px;
       font-size: 1em;
     }
+    @include media(">phone", "<=tablet") {
+      width: 480px;
+    }
     @include media(">320px", "<=phone") {
       width: 330px;
     }
@@ -1720,6 +1723,7 @@ footer {
         transform: translate3d(0, 0, 0);
         opacity: 1;
         font-size: 0.8em;
+        text-transform: none;
       }
     }
     &:hover {
