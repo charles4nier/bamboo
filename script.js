@@ -5,7 +5,7 @@ var whiteSquareHeaderElt = document.getElementById('white-title-header-elt');
 var bambooStrawsWhiteContainer = document.getElementById('the-bamboo-straws-white-square');
 var bambooPara = document.querySelector('.the-bamboo-title-container p:nth-child(2)');
 var bambooCards = document.querySelectorAll('.the-bamboo-straws .card-container .card');
-var purchaseA = document.querySelector('.purchase a');
+var purchaseButton = document.querySelector('.purchase a');
 var purchaseBorder = document.querySelectorAll('.purchase a .border-button');
 var purchaseBackground = document.querySelector('.purchase a span:last-child');
 var changeWhiteSquare = document.querySelector('.the-change .the-change-title-container p');
@@ -22,128 +22,153 @@ var contactUl = document.querySelector('.contact-us ul');
 var newletterP = document.querySelector(".newsletter p");
 var newletterForm = document.querySelector(".newsletter form");
 var footerLi = document.querySelectorAll('footer div ul li');
-var footer = document.querySelector("footer");
+var footerImg = document.querySelector('footer div .logo');
+var footerButton = document.querySelector('footer .superjoli-button');
+var footerBorder = document.querySelectorAll('footer .superjoli-button .border-button');
+var footerBackground = document.querySelector('footer .superjoli-button span:last-child');
 var documentElt = document.documentElement;
 
 
 window.addEventListener("load", function () {
     headerElt.classList.add('animated', 'fadeIn');
-    purchaseBackground.style.opacity = 0;
+    if (window.matchMedia("(min-width: 749px)").matches) {
+        purchaseBackground.style.opacity = 0;
+        footerBackground.style.opacity = 0;
+    }
     setTimeout(function() {
         titleHeaderElt.classList.add('animated', 'fadeIn');
     }, 270);
 });
 
 window.addEventListener('scroll', function() {
-    whiteSquareHeaderElt.classList.add('animated', 'fadeInUp');
+    if (window.matchMedia("(min-width: 749px)").matches) {
+        whiteSquareHeaderElt.classList.add('animated', 'fadeInUp')
+        if(documentElt.scrollTop >= 600) {
+            showOnScrollElt(otherTitles[1], 500,'titleAnime');
+            setTimeout(showOnScrollElt, 50, bambooPara,  700, 'afterLeftIn');
 
-    showEl(otherTitles[1], 'titleAnime');
-    showEl(bambooPara, 'afterLeftIn');
+        }
 
+        if(documentElt.scrollTop >= 700) {
+            setTimeout(function() {
+                bambooPara.classList.remove('afterLeftIn');
+                bambooPara.classList.add('afterRightOut');
+            }, 1000)
+        }
 
-    if(documentElt.scrollTop >= 700) {
-        setTimeout(function() {
-            bambooPara.classList.remove('afterLeftIn');
-            bambooPara.classList.add('afterRightOut');
-        }, 1000)
-    }
-
-    showEl(bambooStrawsWhiteContainer, 'scaleSquare');
-
-
-
-    for(var i = 0; i < bambooCards.length; i++ ) {
-        var addTime = i * 150;
-        setTimeout(showEl, addTime, bambooCards[i], 'fadeInUp', 1000);
-    }
+        showOnScrollElt(bambooStrawsWhiteContainer,  875, 'scaleSquare');
 
 
-    showEl(purchaseBorder[1], 'fadeInDownFadeOut');
-    showEl(purchaseBorder[3], 'fadeInUpFadeOut');
 
-    setTimeout(showEl, 50, purchaseBorder[0], 'fadeInRightFadeOut');
-    setTimeout(showEl, 100, purchaseBorder[2], 'fadeInLeftFadeOut');
-    setTimeout(function() {
-        purchaseBackground.style.opacity = 1;
-        purchaseA.classList.add('shadow');
-    }, 500);
+        if(documentElt.scrollTop >= 950) {
+            for(var i = 0; i < bambooCards.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, addTime, bambooCards[i],  980, 'fadeInUp');
+            }
+        }
 
+        if(documentElt.scrollTop >= 1650) {
+            showOnScrollElt(purchaseBorder[1],  1050, 'fadeInDownFadeOut');
+            showOnScrollElt(purchaseBorder[3],  1050, 'fadeInUpFadeOut');
+            setTimeout(showOnScrollElt, 200, purchaseBorder[0],  1050, 'fadeInRightFadeOut');
+            setTimeout(showOnScrollElt, 200, purchaseBorder[2],  1050, 'fadeInLeftFadeOut');
+            setTimeout(function() {
+                purchaseBackground.style.opacity = 1;
+            }, 700);
+            setTimeout(function() {
+                purchaseButton.classList.add('shadow');
+            }, 650);
+        }
 
-    showEl(otherTitles[2], 'titleAnime');
-    showEl(changeWhiteSquare, 'scaleSquare');
+        showOnScrollElt(otherTitles[2], 2500, 'titleAnime');
+        showOnScrollElt(changeWhiteSquare,  2750, 'scaleSquare');
 
-    if(documentElt.scrollTop >= 2900) {
-        for(var i = 0; i < changeCards.length; i++ ) {
-            var addTime = i * 150;
-            setTimeout(showEl, addTime, changeCards[i], 'fadeInUp', 900);
+        if(documentElt.scrollTop >= 2900) {
+            for(var i = 0; i < changeCards.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, addTime, changeCards[i], 3100, 'fadeInUp');
+            }
+        }
+
+        showOnScrollElt(otherTitles[3],  3800, 'titleAnime');
+
+        showOnScrollElt(useBambooSquare, 4250, 'scaleSquare');
+
+        if(documentElt.scrollTop >= 4250) {
+            for(var i = 0; i < useBambooCards.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, addTime, useBambooCards[i], 4050, 'fadeInUp');
+            }
+        }
+
+        if(documentElt.scrollTop >= 4450) {
+            showOnScrollElt(useBambooSquare2, 4580, 'fadeIn')
+            for(var i = 0; i < useBambooCards2.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, addTime, useBambooCards2[i], 4780, 'fadeInUp');
+            }
+        }
+
+        showOnScrollElt(otherTitles[4], 5240, 'titleAnime');
+
+        showOnScrollElt(otherTitles[4], 5240, 'titleAnime');
+        if(documentElt.scrollTop >= 5240) {
+            setTimeout(showOnScrollElt, 300, aboutSquare, 5240, 'fadeIn');
+        }
+
+        if(documentElt.scrollTop >= 5240) {
+            for(var i = 0; i < aboutP.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, 100 + addTime, aboutImg[i], 4780, 'fadeIn');
+                setTimeout(showOnScrollElt, 300 + addTime, aboutH2[i],  4780, 'fadeIn');
+                setTimeout(showOnScrollElt, 500 + addTime, aboutP[i], 4780, 'fadeIn');
+            }
+        }
+
+        if(documentElt.scrollTop >= 6440) {
+            showOnScrollElt(otherTitles[5], 6440, 'titleAnime');
+            setTimeout(showOnScrollElt, 600, contactUl, 6440, 'fadeIn');
+        }
+
+        if(documentElt.scrollTop >= 7040) {
+            showOnScrollElt(otherTitles[6], 7040, 'titleAnime');
+            setTimeout(showOnScrollElt, 600, newletterP, 7040, 'fadeIn');
+            setTimeout(showOnScrollElt, 800, newletterForm, 7040, 'fadeIn');
+        }
+
+        if(documentElt.scrollTop >= 7840) {
+            showOnScrollElt(otherTitles[7], 7840, 'titleAnime');
+            for(var i = 0; i < footerLi.length; i++ ) {
+                var addTime = i * 150;
+                setTimeout(showOnScrollElt, 150 + addTime, footerLi[i], 7840, 'fadeIn');
+            }
+            setTimeout(showOnScrollElt, 600, footerImg,7840, 'fadeIn');
+
+            showOnScrollElt(footerBorder[1],  7840, 'fadeInDownFadeOut');
+            showOnScrollElt(footerBorder[3],  7840, 'fadeInUpFadeOut');
+            setTimeout(showOnScrollElt, 200, footerBorder[0],  7840, 'fadeInRightFadeOut');
+            setTimeout(showOnScrollElt, 200, footerBorder[2],  7840, 'fadeInLeftFadeOut');
+            setTimeout(function() {
+                footerBackground.style.opacity = 1;
+            }, 700);
+            setTimeout(function() {
+                footerButton.classList.add('shadow');
+            }, 650);
         }
     }
-
-    showEl(otherTitles[3], 'titleAnime');
-
-    showEl(useBambooSquare, 'scaleSquare');
-
-    if(documentElt.scrollTop >= 4250) {
-        for(var i = 0; i < useBambooCards.length; i++ ) {
-            var addTime = i * 150;
-            setTimeout(showEl, addTime, useBambooCards[i], 'fadeInUp');
-        }
-    }
-
-    if(documentElt.scrollTop >= 4450) {
-        showEl(useBambooSquare2, 'fadeIn')
-        for(var i = 0; i < useBambooCards2.length; i++ ) {
-            var addTime = i * 150;
-            setTimeout(showEl, addTime, useBambooCards2[i], 'fadeInUp');
-        }
-    }
-
-    showEl(otherTitles[4], 'titleAnime');
-
-    if(documentElt.scrollTop >= 5240) {
-        setTimeout(showEl, 300, aboutSquare, 'fadeIn');
-    }
-
-    if(documentElt.scrollTop >= 5240) {
-        for(var i = 0; i < aboutP.length; i++ ) {
-            var addTime = i * 150;
-            setTimeout(showEl, 100 + addTime, aboutImg[i], 'fadeIn');
-            setTimeout(showEl, 300 + addTime, aboutH2[i], 'fadeIn');
-            setTimeout(showEl, 500 + addTime, aboutP[i], 'fadeIn');
-        }
-    }
-
-    if(documentElt.scrollTop >= 6440) {
-        showEl(otherTitles[5], 'titleAnime');
-        setTimeout(showEl, 600, contactUl, 'fadeIn');
-    }
-
-    if(documentElt.scrollTop >= 7040) {
-        showEl(otherTitles[6], 'titleAnime');
-        setTimeout(showEl, 600, newletterP, 'fadeIn');
-        setTimeout(showEl, 800, newletterForm, 'fadeIn');
-    }
-
-    if(documentElt.scrollTop >= footer.offsetTop - 650) {
-        showEl(otherTitles[7], 'titleAnime', 1500);
-        for(var i = 0; i < footerLi.length; i++ ) {
-            var addTime = i * 150;
-            setTimeout(showEl, 150 + addTime, footerLi[i], 'fadeIn', 1500);
-        }
-    }
-    console.log(documentElt.scrollTop);
 });
 
 function offset(el) {
     var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return  rect.top + scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 
-function showEl(elt, anim, addDistance) {
-    var dist = addDistance || 0;
-    var elPosition = offset(elt) - 650;
-    if(documentElt.scrollTop >= elPosition - dist) {
+function showOnScrollElt(elt, startAnimPosition, anim) {
+
+    if(documentElt.scrollTop >= startAnimPosition ) {
         elt.classList.add('animated', anim);
     }
 }
+
