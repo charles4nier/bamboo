@@ -730,7 +730,7 @@ header {
     .card {
       width: 227px;
       margin: 0 5px;
-      transform: translate3d(0, 1000px, 0);
+      transform: translate3d(0, 25%, 0);
       @include media(">320px", "<=tablet") {
         transform: translate3d(0, 0, 0);
       }

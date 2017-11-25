@@ -26,8 +26,7 @@ var footerImg = document.querySelector('footer div .logo');
 var footerButton = document.querySelector('footer .superjoli-button');
 var footerBorder = document.querySelectorAll('footer .superjoli-button .border-button');
 var footerBackground = document.querySelector('footer .superjoli-button span:last-child');
-var documentElt = document.documentElement;
-
+var documentElt = /MSIE 10/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) ? document.body : document.documentElement;
 
 window.addEventListener("load", function () {
     headerElt.classList.add('animated', 'fadeIn');
@@ -43,12 +42,15 @@ window.addEventListener("load", function () {
     }
 });
 
-window.addEventListener('scroll', function() {
-    if (window.matchMedia("(min-width: 749px)").matches) {
-        whiteSquareHeaderElt.classList.add('animated', 'fadeInUp')
-        if(documentElt.scrollTop >= 600) {
+
+
+    window.addEventListener('scroll', function() {
+        whiteSquareHeaderElt.classList.add('animated', 'fadeInUp');
+        console.log(documentElt.scrollTop);
+        if(Number(documentElt.scrollTop) >= 600) {console.log('bonjour2');
             showOnScrollElt(otherTitles[1], 500,'titleAnime');
             setTimeout(showOnScrollElt, 50, bambooPara,  700, 'afterLeftIn');
+
 
         }
 
@@ -63,9 +65,9 @@ window.addEventListener('scroll', function() {
 
 
 
-        if(documentElt.scrollTop >= 950) {
+        if(documentElt.scrollTop >= 1250) {
             for(var i = 0; i < bambooCards.length; i++ ) {
-                var addTime = i * 150;
+                var addTime = i * 250;
                 setTimeout(showOnScrollElt, addTime, bambooCards[i],  980, 'fadeInUp');
             }
         }
@@ -86,9 +88,9 @@ window.addEventListener('scroll', function() {
         showOnScrollElt(otherTitles[2], 2500, 'titleAnime');
         showOnScrollElt(changeWhiteSquare,  2750, 'scaleSquare');
 
-        if(documentElt.scrollTop >= 2900) {
+        if(documentElt.scrollTop >= 3100) {
             for(var i = 0; i < changeCards.length; i++ ) {
-                var addTime = i * 150;
+                var addTime = i * 250;
                 setTimeout(showOnScrollElt, addTime, changeCards[i], 3100, 'fadeInUp');
             }
         }
@@ -99,15 +101,15 @@ window.addEventListener('scroll', function() {
 
         if(documentElt.scrollTop >= 4250) {
             for(var i = 0; i < useBambooCards.length; i++ ) {
-                var addTime = i * 150;
+                var addTime = i * 250;
                 setTimeout(showOnScrollElt, addTime, useBambooCards[i], 4050, 'fadeInUp');
             }
         }
 
-        if(documentElt.scrollTop >= 4450) {
+        if(documentElt.scrollTop >= 4650) {
             showOnScrollElt(useBambooSquare2, 4580, 'fadeIn')
             for(var i = 0; i < useBambooCards2.length; i++ ) {
-                var addTime = i * 150;
+                var addTime = i * 250;
                 setTimeout(showOnScrollElt, addTime, useBambooCards2[i], 4780, 'fadeInUp');
             }
         }
@@ -158,8 +160,7 @@ window.addEventListener('scroll', function() {
                 footerButton.classList.add('shadow');
             }, 650);
         }
-    }
-});
+    });
 
 function offset(el) {
     var rect = el.getBoundingClientRect(),
