@@ -68,15 +68,15 @@ h1 {
     letter-spacing: 3px;
     margin-top: 10px;
   }
-  @include media(">320px", "<=phone") {
+  @include media(">300px", "<=phone") {
     display: flex;
-    font-size: 2.6em;
+    font-size: 2.3em;
     letter-spacing: 3px;
     margin-top: 10px;
     text-align: center;
     justify-content: center;
   }
-  @include media (">320px", "<=tablet") {
+  @include media (">300px", "<=tablet") {
     line-height: 1em;
   }
 }
@@ -179,11 +179,11 @@ header {
     @include background-img(url('img/750_big_pic_01.jpg'));
     margin-bottom: 455px;
   }
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_01.jpg'));
     margin-bottom: 312px;
   }
-  @include media(">320px", "<=phone") {
+  @include media(">300px", "<=phone") {
     margin-bottom: 182px;
   }
   h1 {
@@ -198,7 +198,7 @@ header {
       margin-bottom: 80%;
     }
 
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       position: absolute;
       top: 150px;
       left: calc(50% - 99px);
@@ -220,6 +220,9 @@ header {
         width: 300px;
       }
     }
+    @media (min-width: 568px) and (min-height: 320px) and (orientation: landscape) {
+      top: 50px !important;
+    }
   }
   .white-container {
     display: flex;
@@ -233,7 +236,7 @@ header {
     @include media (">desktop", "<=desktop-large") {
       margin-bottom: -190px;
     }
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       background-color: $white;
     }
     @include media (">tablet", "<=tablet-large") {
@@ -247,7 +250,7 @@ header {
     @include media(">phone", "<=tablet") {
       margin-top: 0;
     }
-    @include media (">320px", "<=tablet") {
+    @include media (">300px", "<=tablet") {
       transform: none;
     }
       div {
@@ -278,7 +281,7 @@ header {
             font-size: 1em;
             padding-left: 20px;
           }
-          @include media(">320px", "<=phone") {
+          @include media(">300px", "<=phone") {
             font-size: 0.8em;
             padding-left: 20px;
             width: 80%;
@@ -303,12 +306,12 @@ header {
         height: auto;
         width: 210px;
       }
-      @include media (">320px", "<=phone") {
+      @include media (">300px", "<=phone") {
         height: auto;
         width: 130px;
       }
     }
-    @include media(">320px", "<=tablet") {
+    @include media(">300px", "<=tablet") {
       height: auto;
       width: 100%;
     }
@@ -318,7 +321,7 @@ header {
 .the-bamboo-straws {
   height: auto;
   width: 100%;
-  @include media (">320px", "<=tablet-large") {
+  @include media (">300px", "<=tablet-large") {
     margin-top: 30px;
   }
   .the-bamboo-title-container {
@@ -338,7 +341,7 @@ header {
     @include media (">tablet", "<=tablet-large") {
       @include background-img(url('img/750_big_pic_02.jpg'));
     }
-    @include media(">320px", "<=tablet") {
+    @include media(">300px", "<=tablet") {
       @include background-img(url('img/500_big_pic_02.jpg'));
       height: 500px;
       margin-bottom: 0;
@@ -354,7 +357,7 @@ header {
     }
     h1 {
       margin-top: 58px;
-      @include media (">320px", "<=phone") {
+      @include media (">300px", "<=phone") {
         margin-left: auto;
         margin-right: auto;
       }
@@ -371,13 +374,13 @@ header {
       @include media(">tablet-large", "<=desktop") {
         font-size: 1em;
       }
-      @include media (">320px", "<=tablet-large") {
+      @include media (">300px", "<=tablet-large") {
         width: 580px;
         margin-bottom: -75px;
         color: $grey-light;
         font-size: 1.2em;
       }
-      @include media (">320px", "<tablet") {
+      @include media (">300px", "<tablet") {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -386,7 +389,7 @@ header {
         margin-right: auto;
         width: 320px;
       }
-      @include media (">320px", "<phone") {
+      @include media (">300px", "<phone") {
         font-size: 1em;
       }
       @include media (">tablet", "<=tablet-large") {
@@ -406,7 +409,7 @@ header {
       span {
         opacity: 0;
         transition: .3s ease-out;
-        @include media (">320px", "<=tablet") {
+        @include media (">300px", "<=tablet") {
           opacity: 1;
         }
       }
@@ -432,7 +435,7 @@ header {
     width: 100px;
     margin-left: auto;
     margin-right: auto;
-    @include media (">320px", "<tablet") {
+    @include media (">300px", "<tablet") {
       margin-right: 0;
     }
     .white-square {
@@ -456,7 +459,7 @@ header {
         width: 298px;
         top: -48px;
       }
-      @include media (">320px", "<tablet") {
+      @include media (">300px", "<tablet") {
         height: 115px;
         width: 177px;
         font-size: 1.2em;
@@ -472,11 +475,13 @@ header {
     @include media(">tablet", "<=tablet-large") {
       margin-top: 112px;
     }
-    @include media(">320px", "<=phone") {
+    @include media(">300px", "<=phone") {
       width: 100%;
       margin: 66px 0 0 0;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+      align-items: center;
     }
     .card {
       position: relative;
@@ -486,12 +491,13 @@ header {
       align-items: flex-end;
       margin: 0 5px;
       transform: translate3d(0, 100%, 0);
-      @include media (">320px", "<=tablet") {
+      @include media (">300px", "<=tablet") {
         transform: translate3d(0, 0, 0);
       }
-      @include media(">320px", "<=phone") {
-        width: 32%;
-        height: 245px;
+      @include media(">300px", "<=phone") {
+        width: 280px;
+        height: 370px;
+        margin: 5px 0;
       }
       &:first-child {
         @include background-img(url('img/all_small_pic_02.jpg'));
@@ -509,7 +515,7 @@ header {
         color: $white;
         font-family: ProximaNovaLight;
         border-top: 1px solid $white;
-        @include media(">320px", "<=phone") {
+        @include media(">300px", "<=phone") {
           font-size: 0.9em;
           margin-left: 8px;
         }
@@ -552,7 +558,7 @@ header {
     height: 449px;
     margin-top: 200px;
   }
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_03.jpg'));
     height: 356px;
     margin: 32px 0;
@@ -573,8 +579,8 @@ header {
     transition: .3s opacity, .1s border-width, .3s box-shadow;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     margin-top: 100px;
-    @include media(">320px", "<=tablet") {
-      width: 340px;
+    @include media(">300px", "<=tablet") {
+      width: 320px;
       font-size: 1em;
       letter-spacing: 2px;
     }
@@ -583,6 +589,7 @@ header {
         width: 3px;
       }
       &:last-child {
+        box-sizing: border-box;
         position: relative;
         display: flex;
         align-items: center;
@@ -661,14 +668,14 @@ header {
     @include media (">tablet", "<=tablet-large") {
       @include background-img(url('img/750_big_pic_04.jpg'));
     }
-    @include media(">320px", "<=tablet") {
+    @include media(">300px", "<=tablet") {
       @include background-img(url('img/500_big_pic_04.jpg'));
     }
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       height: 500px;
     }
     .the-change-title-container {
-      @include media(">320px", "<=phone") {
+      @include media(">300px", "<=phone") {
         margin-bottom: 180px;
       }
     }
@@ -678,7 +685,7 @@ header {
         margin-top: 32px;
         margin-left: 45px;
       }
-      @include media(">320px", "<=phone") {
+      @include media(">300px", "<=phone") {
         display: flex;
         width: 250px;
         margin-top: 32px;
@@ -697,10 +704,10 @@ header {
       padding: 45px 100px;
       font-size: 1.1em;
       transform: scale(0);
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         transform: scale(1);
       }
-      @include media(">320px", "<=tablet-large") {
+      @include media(">300px", "<=tablet-large") {
         width: 90%;
         height: 130px;
         left: 5%;
@@ -709,7 +716,7 @@ header {
           content: ' ';
         }
       }
-      @include media(">320px", "<=tablet-large") {
+      @include media(">300px", "<=tablet-large") {
         bottom: -130px;
         height: auto;
         width: 90%;
@@ -731,8 +738,10 @@ header {
       width: 227px;
       margin: 0 5px;
       transform: translate3d(0, 25%, 0);
-      @include media(">320px", "<=tablet") {
+      opacity: 0;
+      @include media(">300px", "<=tablet") {
         transform: translate3d(0, 0, 0);
+        opacity: 1;
       }
       h2 {
         display: flex;
@@ -767,7 +776,7 @@ header {
         font-family: ProximaNovaLight;
       }
     }
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       display: flex;
       width: 88%;
       margin-left: auto;
@@ -796,7 +805,7 @@ header {
         }
       }
     }
-    @include media(">320px", "<=phone") {
+    @include media(">300px", "<=phone") {
       .card {
         height: 150px;
         h2 {
@@ -808,8 +817,8 @@ header {
           height: 100%;
           align-items: center;
           background-color: rgba(0,0,0,0);
-          font-size: 1em;
-          padding: 25px;
+          font-size: 13px;
+          padding: 5px 8px;
         }
       }
     }
@@ -834,7 +843,7 @@ header {
     @include media (">tablet", "<=tablet-large") {
       @include background-img(url('img/750_big_pic_05.jpg'));
     }
-    @include media(">320px", "<=tablet") {
+    @include media(">300px", "<=tablet") {
       @include background-img(url('img/500_big_pic_05.jpg'));
       height: 500px;
     }
@@ -847,7 +856,7 @@ header {
         margin-left: 45px;
       }
     }
-    @include media(">320px", "<=phone") {
+    @include media(">300px", "<=phone") {
       padding-top: 32px;
       h1 {
         margin-left: 0;
@@ -893,7 +902,7 @@ header {
       transform: translate3d(0, -900px, 0);
       opacity: 0;
       display: inline;
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         transform: translate3d(0, 0, 0);
         opacity: 1;
       }
@@ -901,14 +910,14 @@ header {
     .smallDevicesImg {
       display: none;
     }
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       width: 100%;
       flex-wrap: wrap;
     }
   }
   .photo-container-1 {
     padding-top: 100px;
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       padding-top: 36px !important;
     }
 
@@ -922,10 +931,10 @@ header {
       transform: scale(0);
       z-index: 400;
       box-sizing: border-box;
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         transform: scale(1);
       }
-      @include media(">320px", "<=tablet-large") {
+      @include media(">300px", "<=tablet-large") {
         position: relative;
         z-index: 0;
       }
@@ -950,7 +959,7 @@ header {
           font-size: 1em;
         }
       }
-      @include media(">320px", "<=phone") {
+      @include media(">300px", "<=phone") {
         top: 0;
         left: 0;
         height: auto;
@@ -991,7 +1000,7 @@ header {
         width: 350px !important;
         margin: 5px !important;
       }
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         width: 244px !important;
         margin: 5px !important;
         height: 450px !important;
@@ -1010,7 +1019,7 @@ header {
       width: 100%;
       padding: 25px 50px 0 50px;
       opacity: 0;
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         opacity: 1;
       }
     }
@@ -1033,7 +1042,7 @@ header {
         font-size: 1.4em;
       }
     }
-    @include media (">320px", "<=tablet") {
+    @include media (">300px", "<=tablet") {
       div, img {
         height: 244px;
         width: 244px;
@@ -1069,11 +1078,11 @@ header {
     overflow-x: hidden;
   }
 
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_06.jpg'));
   }
 
-  @include media(">320px", "<=tablet-large") {
+  @include media(">300px", "<=tablet-large") {
     margin-top: 30px;
     padding: 45px 0;
     height: auto;
@@ -1082,14 +1091,14 @@ header {
   h1 {
     height: 80px;
     margin-bottom: 100px;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       margin-top: 30px;
       margin-left: 45px;
     }
-    @include media (">320px", "<=tablet") {
+    @include media (">300px", "<=tablet") {
        margin-bottom: 10px;
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       margin-left: 0;
     }
 
@@ -1104,7 +1113,7 @@ header {
     @include media (">phone", "<=tablet-large") {
       left: 100%
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       display: none;
     }
     div {
@@ -1118,7 +1127,7 @@ header {
       box-sizing: border-box;
       transform-origin: 100% 50%;
       opacity: 0;
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         opacity: 1;
       }
       @include media (">tablet", "<=tablet-large") {
@@ -1136,11 +1145,11 @@ header {
         @include media (">tablet", "<=tablet-large") {
           font-size: 1.3em;
         }
-        @include media (">320px", "<=tablet") {
+        @include media (">300px", "<=tablet") {
           font-size: 1.06em;
         }
       }
-      @include media (">320px", "<=tablet") {
+      @include media (">300px", "<=tablet") {
         height: 200px;
         width: 210px;
         top: 160px;
@@ -1157,7 +1166,7 @@ header {
     @include media (">phone", "<=tablet-large") {
       margin-left: 45px;
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1170,22 +1179,22 @@ header {
     flex-direction: column;
     list-style: none;
     overflow: hidden;
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       align-items: flex-start;
     }
     img {
       width: 63px;
       margin-bottom: 10px;
       opacity: 0;
-      @include media (">320px", "<=tablet-large") {
+      @include media (">300px", "<=tablet-large") {
         margin-bottom: 0;
         width: 63px;
       }
-      @include media (">320px", "<=tablet") {
+      @include media (">300px", "<=tablet") {
         position: relative;
         width: 40px;
       }
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         opacity: 1;
       }
     }
@@ -1198,7 +1207,7 @@ header {
       opacity: 0;
       margin-bottom: 15px;
       flex-direction: column;
-      @include media (">320px", "<=tablet-large") {
+      @include media (">300px", "<=tablet-large") {
         flex-direction: row;
         height: 50px;
         align-items: flex-end;
@@ -1207,7 +1216,7 @@ header {
           margin-left: 5px;
         }
       }
-      @include media (">320px", "<=tablet") {
+      @include media (">300px", "<=tablet") {
         font-size: 1.2em;
         opacity: 1;
       }
@@ -1216,13 +1225,13 @@ header {
       margin-left: 0 !important;
       margin-bottom: 30px;
       opacity: 0;
-      @include media (">320px", "<=tablet") {
+      @include media (">300px", "<=tablet") {
         font-size: 0.8em;
         opacity: 1;
       }
-      @include media (">320px", "<=phone") {
-        width: 350px !important;
-        @include media (">320px", "<=phone") {
+      @include media (">300px", "<=phone") {
+        width: 300px !important;
+        @include media (">300px", "<=phone") {
           br {
             content: ' ';
           }
@@ -1235,7 +1244,7 @@ header {
           margin-bottom: 5px;
           margin-left: 12px;
         }
-        @include media (">320px", "<=tablet") {
+        @include media (">300px", "<=tablet") {
           margin-bottom: 0;
         }
       }
@@ -1250,7 +1259,7 @@ header {
     &:nth-child(2){
       img{
         width: 48px;
-        @include media (">320px", "<=tablet") {
+        @include media (">300px", "<=tablet") {
           width: 35px;
         }
       }
@@ -1262,11 +1271,14 @@ header {
           br {
             content: ' ';
           }
+          @media (min-width: 568px) and (min-height: 320px) and (orientation: landscape) {
+            width: 470px;
+          }
         }
       }
       img{
         width: 32px;
-        @include media (">320px", "<=tablet") {
+        @include media (">300px", "<=tablet") {
           width: 26px;
         }
       }
@@ -1274,11 +1286,11 @@ header {
   }
   p {
     color: #323A42;
-    @include media (">320px", "<=tablet") {
+    @include media (">300px", "<=tablet") {
       font-size: 0.8em;
     }
   }
-  @include media (">320px", "<=tablet") {
+  @include media (">300px", "<=tablet") {
     padding: 10px 0;
     font-family: ProximaNovaBold;
   }
@@ -1300,7 +1312,7 @@ header {
     @include background-img(url('img/750_big_pic_07.jpg'));
     height: 500px;
   }
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_07.jpg'));
     height: 500px;
   }
@@ -1316,7 +1328,7 @@ header {
       margin-left: 45px;
       margin-top: 32px;
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       margin-left: 0;
       margin-top: 32px;
       margin-bottom: 0;
@@ -1325,14 +1337,14 @@ header {
   ul {
     margin-left: 23%;
     opacity: 0;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       opacity: 1;
     }
     @include media (">phone", "<=tablet-large") {
       margin-left: auto;
       margin-right: auto;
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       margin-left: 0;
       display: flex;
       flex-direction: column;
@@ -1352,7 +1364,7 @@ header {
         margin-top: 15px;
         font-size: 2em;
       }
-      @include media (">320px", "<=phone") {
+      @include media (">300px", "<=phone") {
         font-size: 0.9em;
         margin-bottom: 5px;
         &:last-child {
@@ -1382,7 +1394,7 @@ header {
   @include media (">tablet", "<=tablet-large") {
     @include background-img(url('img/750_big_pic_08.jpg'));
   }
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_08.jpg'));
     height: 500px;
   }
@@ -1404,15 +1416,15 @@ header {
       top: 32px;
       left: 45px;
     }
-    @include media (">320px", "<=phone") {
+    @include media (">300px", "<=phone") {
       top: 32px;
-      width: 330px;
+      width: 320px;
       left: calc(50% - 165px);
     }
   }
   p, form {
     opacity: 0;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       display: flex;
       flex-direction: column;
       width: 80%;
@@ -1431,7 +1443,7 @@ header {
     margin-left: -7%;
     font-size: 1.3em;
     width: 200px;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       margin-left: auto;
       margin-right: auto;
       margin-top: 105px;
@@ -1442,7 +1454,7 @@ header {
   form {
     display: flex;
     height: 60px;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       margin-top: 60px;
       width: 250px;
       height: 100px;
@@ -1457,7 +1469,7 @@ header {
     color: $white;
     padding: 0 35px;
     box-sizing: border-box;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       margin-bottom: 15px;
       width: 100%;
       font-size: 1.2em;
@@ -1486,7 +1498,7 @@ header {
     letter-spacing: 3px;
     font-size: 1em;
     font-family: ProximaNovaBold;
-    @include media (">320px", "<=tablet-large") {
+    @include media (">300px", "<=tablet-large") {
       height: 80px;
       padding-left: 0px;
       padding-right: 0px;
@@ -1579,14 +1591,14 @@ footer {
   @include media (">tablet", "<=tablet-large") {
     @include background-img(url('img/750_big_pic_09.jpg'));
   }
-  @include media(">320px", "<=tablet") {
+  @include media(">300px", "<=tablet") {
     @include background-img(url('img/500_big_pic_09.jpg'));
     height: 512px;
   }
   @include media(">tablet-large", "<=desktop"){
     height: 572px;
   }
-  @include media(">320px", "<=tablet-large") {
+  @include media(">300px", "<=tablet-large") {
     flex-direction: column;
     align-items: center;
     height: 500px;
@@ -1604,8 +1616,8 @@ footer {
       left: 45px;
       margin: 0;
     }
-    @include media (">320px", "<=phone") {
-      width: 350px;
+    @include media (">300px", "<=phone") {
+      width: 320px;
       left: calc(50% - 175px);
       position: absolute;
       top: 32px;
@@ -1619,7 +1631,7 @@ footer {
     flex-direction: column;
     margin-top: 150px;
     margin-left: 15%;
-    @include media(">320px", "<=tablet-large") {
+    @include media(">300px", "<=tablet-large") {
       margin-left: 0;
     }
     ul {
@@ -1628,7 +1640,7 @@ footer {
         opacity: 0;
         list-style: none;
         margin: 23px 3px 40px 3px;
-        @include media(">320px", "<=tablet-large") {
+        @include media(">300px", "<=tablet-large") {
           opacity: 1;
         }
         a {
@@ -1643,15 +1655,19 @@ footer {
             top: 0;
             left: 0;
             width: 102px;
-            transition: opacity .3s, transform 1s;
+            transition: opacity .4s, transform 1s;
             transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
             &.show {
               transform: translate3d(0, 0, 0);
               opacity: 1;
             }
             &.hide {
-              transform: translate3d(0, 55%, 0);
+              transform: translate3d(0, 100%, 0);
               opacity: 0;
+              width: 75px;
+              height: 75px;
+              margin-top: 14px;
+              margin-left: 14px;
             }
           }
         }
@@ -1660,7 +1676,7 @@ footer {
     .logo{
       width: 120px;
       opacity: 0;
-      @include media(">320px", "<=tablet-large") {
+      @include media(">300px", "<=tablet-large") {
         opacity: 1;
       }
     }
@@ -1680,7 +1696,6 @@ footer {
     display: inline-block;
     width: 700px;
     height: 40px;
-    text-transform: uppercase;
     cursor: pointer;
     overflow: hidden;
     border-color: $white;
@@ -1689,24 +1704,26 @@ footer {
     transition: .3s opacity, .1s border-width, .3s box-shadow;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     margin-top: 200px;
+    text-decoration: none;
     @include media(">tablet", "<=tablet-large") {
       width: 650px;
     }
-    @include media(">320px", "<=desktop") {
+    @include media(">300px", "<=desktop") {
       margin-top: 30px;
       font-size: 1em;
     }
     @include media(">phone", "<=tablet") {
       width: 480px;
     }
-    @include media(">320px", "<=phone") {
-      width: 330px;
+    @include media(">300px", "<=phone") {
+      width: 320px;
     }
     span {
       &:nth-child(2) {
         width: 3px;
       }
       &:last-child {
+        box-sizing: border-box;
         position: relative;
         display: flex;
         align-items: center;
@@ -1732,6 +1749,7 @@ footer {
     }
     &::after {
       content: attr(data-text);
+      text-transform: none;
       position: absolute;
       display: flex;
       align-items: center;
@@ -1747,7 +1765,7 @@ footer {
       transition: .5s all;
       transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
       font-size: 0.8em;
-      @include media(">320px", "<=tablet") {
+      @include media(">300px", "<=tablet") {
         content: 'Conception: SUPERJOLI.COM';
       }
     }
@@ -1782,4 +1800,59 @@ footer .superjoli-button:hover span:last-child{
 
 footer .superjoli-button:hover .border-button {
   background-color: rgba(0,0,0,0);
+}
+
+.pop-up {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1200;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all .3s;
+  pointer-events: none;
+  .pop-up-container {
+    position: fixed;
+    display: flex;
+    background: white;
+    width: 300px;
+    height: 100px;
+    left: calc(50% - 150px);
+    top: calc(50vh - 125px);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.1);
+    transform: translate3d(0,-20px,0);
+    opacity: 0;
+    transition: all .5s .1s;
+    a {
+      font-family: ProximaNovaLight;
+      color: $grey-light;
+      text-decoration: none;
+      width: 240px;
+      line-height: 21px;
+    }
+  }
+}
+
+.pop-up.active {
+  opacity: 1;
+}
+
+.pop-up.active .pop-up-container {
+  transform: translate3d(0,0,0);
+  opacity: 1;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10 & IE11 CSS styles go here */
+  header {
+    background-color: red;
+  }
 }
